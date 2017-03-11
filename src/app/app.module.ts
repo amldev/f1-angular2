@@ -4,17 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { SharedService } from "./shared.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
