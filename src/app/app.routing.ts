@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-import { DriversComponent } from './drivers/drivers.component';
-import { SeasonsComponent } from './seasons/seasons.component';
+import { DriversComponent } from './components/drivers/drivers.component';
+import { SeasonsComponent } from './components/seasons/seasons.component';
 
 const MAINMENU_ROUTES: Routes = [
     //full : makes sure the path is absolute path
