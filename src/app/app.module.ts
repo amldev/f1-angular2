@@ -5,13 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { SharedService } from "./shared.service";
 //Import Pipes
-import { WikipediaMobileUrlPipe } from './app.pipe';
+import { WikipediaMobileUrlPipe } from './pipes/app.pipe';
 
 //routing
 import { ROUTING } from './app.routing';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu.component';
+import { MenuComponent } from './menus/menu.component';
 import { DriversComponent } from './drivers/drivers.component';
 import { SeasonsComponent } from './seasons/seasons.component';
 
