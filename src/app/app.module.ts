@@ -11,9 +11,9 @@ import { WikipediaMobileUrlPipe } from './pipes/app.pipe';
 import { ROUTING } from './app.routing';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menus/menu.component';
-import { DriversComponent } from './drivers/drivers.component';
-import { SeasonsComponent } from './seasons/seasons.component';
+import { MenuComponent } from './components/menus/menu.component';
+import { DriversComponent } from './components/drivers/drivers.component';
+import { SeasonsComponent } from './components/seasons/seasons.component';
 
 @NgModule({
   declarations: [
