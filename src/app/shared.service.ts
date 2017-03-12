@@ -5,15 +5,17 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class SharedService {
-
-    totReqsMade: number = 0;
     f1SeasonsURL: string = "http://ergast.com/api/f1/seasons.json";
     constructor(private _http: Http) { }
 
     findF1SeasonsList() //GET
     {
-      this.totReqsMade = this.totReqsMade + 1;
       return this.getRequest(this.f1SeasonsURL);
+    }
+
+    findSelectYearDrivers(url)
+    {
+      return this.getRequest(url);
     }
 
     //Function to make GET Requests
