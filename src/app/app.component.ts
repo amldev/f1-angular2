@@ -9,7 +9,6 @@ import { SharedService } from "./shared.service";
 
 
 export class AppComponent {
-  title = 'app works!';
 
 
 }
