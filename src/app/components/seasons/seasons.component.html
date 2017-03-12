@@ -1,0 +1,25 @@
+<div class="col-md-8 col-md-offset-2">
+ <div class="form-group">
+   <table class="table">
+   <thead>
+     <tr>
+       <th>#</th>
+       <th>Year</th>
+       <th>Web (URL)</th>
+       <th>Web (Mobile)</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let season of seasons; let i = index">
+       <td scope="row">{{i}}</td>
+       <td>{{season.season}}</td>
+       <td><a href="{{season.url}}">URL of Season {{season.season}}</a></td>
+       <td><a href="{{season.url | wikipediaMobileUrl}}">URL of Season {{season.season}} {{season.url | wikipediaMobileUrl}}</a></td>
+     </tr>
+   </tbody>
+ </table>
+  <p class="text-info">Total # of all the service requests including Weather, Movie, and Currency is :
+    <span class="badge">{{this._sharedService.totReqsMade}}</span>
+  </p>
+ </div>
+</div>
