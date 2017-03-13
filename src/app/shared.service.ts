@@ -5,7 +5,8 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class SharedService {
-    f1SeasonsURL: string = "http://ergast.com/api/f1/seasons.json";
+    f1SeasonsURL: string = "http://ergast.com/api/f1/seasons.json?limit=100";
+    circuitsUrl: string = "http://ergast.com/api/f1/2012.json";
     constructor(private _http: Http) { }
 
     findF1SeasonsList() //GET
