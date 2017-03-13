@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menus/menu.component';
 import { DriversComponent } from './components/drivers/drivers.component';
 import { SeasonsComponent } from './components/seasons/seasons.component';
+import { CircuitsComponent } from './components/circuits/circuits.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SeasonsComponent } from './components/seasons/seasons.component';
     MenuComponent,
     WikipediaMobileUrlPipe,
     DriversComponent,
-    SeasonsComponent
+    SeasonsComponent,
+    CircuitsComponent
   ],
   imports: [
     BrowserModule,
