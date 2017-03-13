@@ -9,7 +9,7 @@ import { SharedService } from "./../../shared.service";
 export class DriverDetailsComponent implements OnInit {
   isLoading: boolean = true;
   constructor(private _sharedService: SharedService) {}
-//
+//https://angular-2-training-book.rangle.io/handout/routing/routeparams.html
   ngOnInit() {
     this.getLastYearDrivers();
   }
@@ -17,17 +17,17 @@ export class DriverDetailsComponent implements OnInit {
 
   getLastYearDrivers() {
     this.setIsLoadingProgress();
-    this._sharedService.findSelectYearDrivers("http://ergast.com/api/f1/2016/drivers.json")
+    this._sharedService.findSelectDriverWithId("alonso")
       .subscribe(
       lstresult => {
-
+        console.log("Load data!");
         this.drivers = lstresult["MRData"]["DriverTable"]["Drivers"];
-        isLoadingFinish();
+        this.isLoadingFinish();
       },
       error => {
         console.log("Error. The findWeather result JSON value is as follows:");
-        console.log(error); 
-        isLoadingFinish();
+        console.log(error);
+        this.isLoadingFinish();
       }
       );
   }
