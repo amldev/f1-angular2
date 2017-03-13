@@ -21,6 +21,13 @@ export class SharedService {
       return this.getRequest(this.urlLocalhost + year + "/drivers.json");
     }
 
+    //http://ergast.com/api/f1/drivers/alonso.json
+    findSelectDriverWithId(driverId)
+    {
+      console.log(this.urlLocalhost + "drivers/" + driverId + ".json");
+      return this.getRequest(this.urlLocalhost + "drivers/" + driverId + ".json");
+    }
+
     //circuitsUrl: "http://ergast.com/api/f1/2012.json";
 
     findSelectYearCircuits(year)
