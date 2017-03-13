@@ -8,8 +8,7 @@
        <th>Name</th>
        <th>Date of Birth</th>
        <th>Nationality</th>
-       <th>Web (URL)</th>
-       <th>Web (Mobile)</th>
+       <th>Source</th>
      </tr>
    </thead>
    <tbody>
@@ -18,8 +17,10 @@
        <td>{{driver.givenName}} {{driver.familyName}}</td>
        <td>{{driver.dateOfBirth}}</td>
        <td>{{driver.nationality}}</td>
-       <td><a href="{{driver.url}}">URL of Driver Bio</a></td>
-       <td><a href="{{driver.url | wikipediaMobileUrl}}">URL of Bio (Mobile)</a></td>
+       <td>
+          <a href="{{driver.url}}" title="Web browser version"><img src="./assets/img/internet.png"/></a>
+          <a href="{{driver.url | wikipediaMobileUrl}}}}" title="Mobile version"><img src="./assets/img/mobile.png"/></a>
+        </td>
      </tr>
    </tbody>
  </table>
