@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styles: []
 })
 export class MenuComponent implements OnInit {
-  
+  @Input('title') title:string = "Formula 1 - Main";
   constructor() { }
 
   ngOnInit() {
