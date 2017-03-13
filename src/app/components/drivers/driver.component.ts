@@ -6,7 +6,7 @@ import { SharedService } from "./../../shared.service";
   templateUrl: './drivers.component.html',
   styleUrls: ['./drivers.component.css']
 })
-export class DriversComponent implements OnInit {
+export class DriverDetailsComponent implements OnInit {
 
   constructor(private _sharedService: SharedService) {}
 //
@@ -16,7 +16,7 @@ export class DriversComponent implements OnInit {
   drivers: any;
 
   getLastYearDrivers() {
-    this._sharedService.findSelectYearDrivers(2016)
+    this._sharedService.findSelectYearDrivers("http://ergast.com/api/f1/2016/drivers.json")
       .subscribe(
       lstresult => {
 
