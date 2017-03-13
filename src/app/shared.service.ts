@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 export class SharedService {
     urlLocalhost: string = "http://ergast.com/api/f1/";
     allf1SeasonsURL: string = this.urlLocalhost + "seasons.json?limit=100";
-    
+    driverSelectYearUrl: string = this.urlLocalhost;
     constructor(private _http: Http) { }
 
     findF1SeasonsList() //GET
@@ -17,6 +17,7 @@ export class SharedService {
 
     findSelectYearDrivers(year)
     {
+      console.log(this.urlLocalhost + year + "/drivers.json");
       return this.getRequest(this.urlLocalhost + year + "/drivers.json");
     }
 
