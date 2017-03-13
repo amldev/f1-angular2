@@ -7,7 +7,7 @@ import { SharedService } from "./../../shared.service";
   styleUrls: ['./drivers.component.css']
 })
 export class DriverDetailsComponent implements OnInit {
-
+  isLoading: boolean = true;
   constructor(private _sharedService: SharedService) {}
 //
   ngOnInit() {
@@ -16,17 +16,30 @@ export class DriverDetailsComponent implements OnInit {
   drivers: any;
 
   getLastYearDrivers() {
+    this.setIsLoadingProgress();
     this._sharedService.findSelectYearDrivers("http://ergast.com/api/f1/2016/drivers.json")
       .subscribe(
       lstresult => {
 
         this.drivers = lstresult["MRData"]["DriverTable"]["Drivers"];
+        isLoadingFinish();
       },
       error => {
         console.log("Error. The findWeather result JSON value is as follows:");
-        console.log(error);
+        console.log(error); 
+        isLoadingFinish();
       }
       );
+  }
+
+  setIsLoadingProgress()
+  {
+    this.isLoading = true;
+  }
+
+  isLoadingFinish()
+  {
+    this.isLoading = false;
   }
 
 }
