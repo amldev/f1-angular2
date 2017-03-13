@@ -11,13 +11,17 @@
        <th>Name</th>
        <th>Date of Birth</th>
        <th>Nationality</th>
-       <th>Source</th>
+       <th>+ Info</th>
      </tr>
    </thead>
    <tbody>
      <tr *ngFor="let driver of drivers; let i = index">
        <td scope="row">{{driver.permanentNumber}}</td>
-       <td>{{driver.givenName}} {{driver.familyName}}</td>
+       <td>
+         <a [routerLink]="['/driver', driver.driverId]">
+            {{driver.givenName}} {{driver.familyName}}
+          </a>
+      </td>
        <td>{{driver.dateOfBirth}}</td>
        <td><img src="./assets/img/flags/{{driver.nationality}}.png" /></td>
        <td>
