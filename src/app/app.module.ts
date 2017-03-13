@@ -13,8 +13,10 @@ import { ROUTING } from './app.routing';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menus/menu.component';
 import { DriversComponent } from './components/drivers/drivers.component';
+import { DriverDetailsComponent } from './components/drivers/driver.component';
 import { SeasonsComponent } from './components/seasons/seasons.component';
 import { CircuitsComponent } from './components/circuits/circuits.component';
+import { PageNotFoundComponent } from './components/notfound/not-found.component'
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { CircuitsComponent } from './components/circuits/circuits.component';
     MenuComponent,
     WikipediaMobileUrlPipe,
     DriversComponent,
+    DriverDetailsComponent,
     SeasonsComponent,
-    CircuitsComponent
+    CircuitsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
