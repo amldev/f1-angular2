@@ -5,18 +5,26 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class SharedService {
-    f1SeasonsURL: string = "http://ergast.com/api/f1/seasons.json?limit=100";
-    circuitsUrl: string = "http://ergast.com/api/f1/2012.json";
+    urlLocalhost: string = "http://ergast.com/api/f1/";
+    allf1SeasonsURL: string = this.urlLocalhost + "seasons.json?limit=100";
+    
     constructor(private _http: Http) { }
 
     findF1SeasonsList() //GET
     {
-      return this.getRequest(this.f1SeasonsURL);
+      return this.getRequest(this.allf1SeasonsURL);
     }
 
-    findSelectYearDrivers(url)
+    findSelectYearDrivers(year)
     {
-      return this.getRequest(url);
+      return this.getRequest(this.urlLocalhost + year + "/drivers.json");
+    }
+
+    //circuitsUrl: "http://ergast.com/api/f1/2012.json";
+
+    findSelectYearCircuits(year)
+    {
+      return this.getRequest(this.urlLocalhost + year + ".json");
     }
 
     //Function to make GET Requests
