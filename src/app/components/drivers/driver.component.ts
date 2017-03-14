@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from "./../../shared.service";
 import { ActivatedRoute } from "@angular/router";
-import { Driver } from "./driver.model"
+import { Driver } from "./driver.model";
+import { WikipediaMobileUrlPipe } from './../../pipes/app.pipe';
 
 @Component({
   selector: 'app-driver',
@@ -9,6 +10,8 @@ import { Driver } from "./driver.model"
   styleUrls: ['./drivers.component.css']
 })
 export class DriverDetailsComponent implements OnInit {
+
+  //@Input() model: Driver; 
   driverId:string;
   driver: any;
   isLoading: boolean = true;
@@ -20,13 +23,14 @@ export class DriverDetailsComponent implements OnInit {
   permanentNumber: number;
   nationality: string;
   url: string;
+  mobileUrl: string;
 
   constructor(private _sharedService: SharedService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
        this.driverId = params['id']; // (+) converts string 'id' to a number
-
+      //console.log(this.model.name +  "   " + this.model.dateOfBirth + " " + this.model.url);
        // In a real app: dispatch action to load the details here.
        this.getLastYearDrivers();
     });
@@ -46,6 +50,7 @@ export class DriverDetailsComponent implements OnInit {
         this.url = this.driver.url;
         this.dateOfBirth = this.driver.dateOfBirth;
         this.permanentNumber = this.driver.permanentNumber;
+        this.mobileUrl = new WikipediaMobileUrlPipe().transform(this.url);
         
         this.isLoadingFinish();
       },
