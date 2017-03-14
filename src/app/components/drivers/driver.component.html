@@ -1,28 +1,20 @@
 <app-menu [title]="'Formula 1- 2016 drivers List'"></app-menu>
-<div class="col-md-8 col-md-offset-2">
- <div class="form-group">
-   <table class="table">
-   <thead>
-     <tr>
-       <th>#Permanent Number</th>
-       <th>Name</th>
-       <th>Date of Birth</th>
-       <th>Nationality</th>
-       <th>Source</th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr *ngFor="let driver of drivers; let i = index">
-       <td scope="row">{{driver.permanentNumber}}</td>
-       <td>{{driver.givenName}} {{driver.familyName}}</td>
-       <td>{{driver.dateOfBirth}}</td>
-       <td><img src="./assets/img/flags/{{driver.nationality}}.png" /></td>
-       <td>
-          <a href="{{driver.url}}" title="Web browser version"><img src="./assets/img/internet.png"/></a>
-          <a href="{{driver.url | wikipediaMobileUrl}}}}" title="Mobile version"><img src="./assets/img/mobile.png"/></a>
-        </td>
-     </tr>
-   </tbody>
- </table>
- </div>
+<div class="row">
+
+
+    <div class="col-md-8 col-md-offset-2">
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object dp img-circle" src="./assets/img/drivers/{{driverId}}.png" style="width: 100px;height:100px;">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">{{name}}<small> <img src="./assets/img/flags/{{nationality}}.png" /></small></h4>
+                <h5><img class="icons" src="./assets/img/icons/birthday.png" /> {{dateOfBirth}}</h5>
+                <hr style="margin:8px auto">
+
+                <span><a href="{{url}}" title="Web browser version"><img src="./assets/img/internet.png"/></a></span>
+                <span><a href="{{url}}" title="Mobile version"><img src="./assets/img/mobile.png"/></a></span>
+            </div>
+        </div>
+    </div>
 </div>
