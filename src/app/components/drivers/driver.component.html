@@ -1,11 +1,11 @@
-<app-menu [title]="'Formula 1- 2016 drivers List'"></app-menu>
+<app-menu [title]="name" [layoutType]= "'driverDetail'"></app-menu>
 <div class="row">
-
-
     <div class="col-md-8 col-md-offset-2">
         <div class="media">
             <a class="pull-left" href="#">
-                <img class="media-object dp img-circle" src="./assets/img/drivers/{{driverId}}.png" style="width: 100px;height:100px;">
+                <img class="media-object dp img-circle"
+                  [src]="profilePhoto" style="width: 100px;height:100px;" 
+                  default="./assets/img/icons/default.png">
             </a>
             <div class="media-body">
                 <h4 class="media-heading">{{name}}<small> <img src="./assets/img/flags/{{nationality}}.png" /></small></h4>
@@ -17,4 +17,10 @@
             </div>
         </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" class="btn btn-default" [routerLink]="['/drivers']">Return to drivers list</button>
+    </div>
+    
 </div>
