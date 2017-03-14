@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Directive } from '@angular/core';
 import { SharedService } from "./../../shared.service";
 import { ActivatedRoute } from "@angular/router";
 import { Driver } from "./driver.model";
@@ -7,7 +7,8 @@ import { WikipediaMobileUrlPipe } from './../../pipes/app.pipe';
 @Component({
   selector: 'app-driver',
   templateUrl: './driver.component.html',
-  styleUrls: ['./drivers.component.css']
+  styleUrls: ['./drivers.component.css'],
+
 })
 export class DriverDetailsComponent implements OnInit {
 
@@ -24,6 +25,7 @@ export class DriverDetailsComponent implements OnInit {
   nationality: string;
   url: string;
   mobileUrl: string;
+  profilePhoto: string;
 
   constructor(private _sharedService: SharedService, private route: ActivatedRoute) {}
 
@@ -50,8 +52,12 @@ export class DriverDetailsComponent implements OnInit {
         this.url = this.driver.url;
         this.dateOfBirth = this.driver.dateOfBirth;
         this.permanentNumber = this.driver.permanentNumber;
+
+        //Transform wikipedia normal url to mobile url
         this.mobileUrl = new WikipediaMobileUrlPipe().transform(this.url);
         
+        //Load select pilot profile photo to use in details
+        this.profilePhoto = "./assets/img/drivers/" + this.driverId + ".png";
         this.isLoadingFinish();
       },
       error => {
