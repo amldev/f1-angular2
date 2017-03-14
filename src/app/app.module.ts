@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { SharedService } from "./shared.service";
 //Import Pipes
 import { WikipediaMobileUrlPipe } from './pipes/app.pipe';
+import { DefaultImage } from './directives/defaultimage.directive';
 
 //routing
 import { ROUTING } from './app.routing';
@@ -27,7 +28,8 @@ import { PageNotFoundComponent } from './components/notfound/not-found.component
     DriverDetailsComponent,
     SeasonsComponent,
     CircuitsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DefaultImage
   ],
   imports: [
     BrowserModule,
