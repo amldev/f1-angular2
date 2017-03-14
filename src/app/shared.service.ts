@@ -10,6 +10,8 @@ export class SharedService {
     driverSelectYearUrl: string = this.urlLocalhost;
     constructor(private _http: Http) { }
 
+    //World championship drivers http://ergast.com/api/f1/driverStandings/1/drivers.json?limit=100
+    //Check select driver world champion: http://ergast.com/api/f1/driverStandings/1/drivers/<driverId>
     findF1SeasonsList() //GET
     {
       return this.getRequest(this.allf1SeasonsURL);
@@ -24,7 +26,6 @@ export class SharedService {
     //http://ergast.com/api/f1/drivers/alonso.json
     findSelectDriverWithId(driverId)
     {
-      console.log(this.urlLocalhost + "drivers/" + driverId + ".json");
       return this.getRequest(this.urlLocalhost + "drivers/" + driverId + ".json");
     }
 
