@@ -1,3 +1,5 @@
+import { WikipediaMobileUrlPipe } from './../../pipes/app.pipe';
+
 export class Driver
 {
     id: string;
@@ -5,7 +7,9 @@ export class Driver
     dateOfBirth: string;
     permanentNumber: number;
     nationality: string;
+    profilePhoto: string;
     url: string;
+    urlMobile: string;
 
     //constructor(){ }
 
@@ -18,5 +22,33 @@ export class Driver
         this.nationality = nationality;
         this.permanentNumber = permanentNumber;
         this.url = url;
+
+         //Transform wikipedia normal url to mobile url
+        this.urlMobile = new WikipediaMobileUrlPipe().transform(this.url);
+        
+        //Load select pilot profile photo to use in details
+        this.profilePhoto = "./assets/img/drivers/" + this.id + ".png";
+    }
+
+    //Getters
+
+    getDateOfBirth()
+    {
+        return this.dateOfBirth;
+    }
+
+    getUrlMobile()
+    {
+        return this.urlMobile;
+    }
+
+    getUrl()
+    {
+        return this.url;
+    }
+
+    getProfilePhoto()
+    {
+        return this.profilePhoto;
     }
 }
