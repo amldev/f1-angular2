@@ -8,12 +8,14 @@ import { SharedService } from "./../../shared.service";
 })
 export class DriversComponent implements OnInit {
   isLoading: boolean = true;
+  drivers: any;
+  driversNationalityFlags : any = [];
   constructor(private _sharedService: SharedService) {}
 //
   ngOnInit() {
     this.getLastYearDrivers();
   }
-  drivers: any;
+
 
   getLastYearDrivers() {
     this.setIsLoadingProgress();
@@ -22,11 +24,18 @@ export class DriversComponent implements OnInit {
       lstresult => {
 
         this.drivers = lstresult["MRData"]["DriverTable"]["Drivers"];
+
+        //Save nationality flags with all url
+        for (var i = 0; i < this.drivers.length; i++)
+        {
+          this.driversNationalityFlags.push("./assets/img/flags/" + this.drivers[i].nationality + ".png");
+        }
+
         this.isLoadingFinish();
       },
       error => {
         console.log("Error. The findWeather result JSON value is as follows:");
-        console.log(error); 
+        console.log(error);
         this.isLoadingFinish();
       }
       );
