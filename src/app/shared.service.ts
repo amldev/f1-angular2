@@ -36,6 +36,12 @@ export class SharedService {
       return this.getRequest(this.urlLocalhost + year + ".json");
     }
 
+    //http://ergast.com/api/f1/circuits.json?limit=100
+    findAllCircuits()
+    {
+      return this.getRequest(this.urlLocalhost + "circuits.json?limit=100");
+    }
+
     //Function to make GET Requests
     getRequest(url)
     {
