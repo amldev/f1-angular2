@@ -5,7 +5,10 @@ import { HttpModule } from '@angular/http';
 
 import { SharedService } from "./shared.service";
 //Import Pipes
-import { WikipediaMobileUrlPipe } from './pipes/app.pipe';
+import { WikipediaMobileUrlPipe } from './pipes/wikipediaurlmobile.pipe';
+import { SearchPipe } from './pipes/search.pipe';
+
+//Import Directives
 import { DefaultImage } from './directives/defaultimage.directive';
 
 //routing
@@ -31,7 +34,8 @@ import { NavigationMenusComponent } from './components/navigation-menus/navigati
     CircuitsComponent,
     PageNotFoundComponent,
     DefaultImage,
-    NavigationMenusComponent
+    NavigationMenusComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
