@@ -17,7 +17,8 @@ import { DriversComponent } from './components/drivers/drivers.component';
 import { DriverDetailsComponent } from './components/drivers/driver.component';
 import { SeasonsComponent } from './components/seasons/seasons.component';
 import { CircuitsComponent } from './components/circuits/circuits.component';
-import { PageNotFoundComponent } from './components/notfound/not-found.component'
+import { PageNotFoundComponent } from './components/notfound/not-found.component';
+import { NavigationMenusComponent } from './components/navigation-menus/navigation-menus.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PageNotFoundComponent } from './components/notfound/not-found.component
     SeasonsComponent,
     CircuitsComponent,
     PageNotFoundComponent,
-    DefaultImage
+    DefaultImage,
+    NavigationMenusComponent
   ],
   imports: [
     BrowserModule,
