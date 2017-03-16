@@ -38,7 +38,7 @@ export class DriversComponent implements OnInit {
         console.log(error);
         this.isLoadingFinish();
       }
-      );
+    );
   }
 
   setIsLoadingProgress()
