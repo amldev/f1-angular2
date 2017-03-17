@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 
-export class AppComponent {
+export class GoogleMapsComponent {
   lat: number = 23.022505;  
   lng: number = 72.571362;  
 }
