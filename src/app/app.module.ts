@@ -24,7 +24,8 @@ import { DriverDetailsComponent } from './components/drivers/driver.component';
 import { SeasonsComponent } from './components/seasons/seasons.component';
 import { CircuitsComponent } from './components/circuits/circuits.component';
 import { PageNotFoundComponent } from './components/notfound/not-found.component';
-import { NavigationMenusComponent } from './components/navigation-menus/navigation-menus.component'
+import { NavigationMenusComponent } from './components/navigation-menus/navigation-menus.component';
+import { GoogleMapsComponent } from './components/googlemaps/google-maps.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NavigationMenusComponent } from './components/navigation-menus/navigati
     PageNotFoundComponent,
     DefaultImage,
     NavigationMenusComponent,
-    SearchPipe
+    SearchPipe,
+    GoogleMapsComponent
   ],
   imports: [
     BrowserModule,
