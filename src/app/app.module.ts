@@ -14,6 +14,9 @@ import { DefaultImage } from './directives/defaultimage.directive';
 //routing
 import { ROUTING } from './app.routing';
 
+//Google Maps
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menus/menu.component';
 import { DriversComponent } from './components/drivers/drivers.component';
@@ -41,7 +44,10 @@ import { NavigationMenusComponent } from './components/navigation-menus/navigati
     BrowserModule,
     FormsModule,
     HttpModule,
-    ROUTING
+    ROUTING,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAf4bgSRANnFPFF8vooBFCItawQVqROcjY'
+    })
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
