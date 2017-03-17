@@ -9,6 +9,6 @@ import { SharedService } from "./shared.service";
 
 
 export class AppComponent {
-
-
+  lat: number = 23.022505;  
+  lng: number = 72.571362;  
 }
