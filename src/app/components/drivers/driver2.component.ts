@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Directive } from '@angular/core';
 import { SharedService } from "./../../shared.service";
 import { ActivatedRoute } from "@angular/router";
 import { Driver } from "./driver.model";
-import { WikipediaMobileUrlPipe } from './../../pipes/app.pipe';
+import { WikipediaMobileUrlPipe } from './../../pipes/wikipediaurlmobile.pipe';
 
 @Component({
   selector: 'driver-details',

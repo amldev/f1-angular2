@@ -1,23 +1,28 @@
 <app-menu [title]="'Formula 1- Seasons List'"></app-menu>
-<div class="col-md-8 col-md-offset-2">
- <div class="form-group">
-   <table class="table">
-   <thead>
-     <tr>
-       <th>#</th>
-       <th>Year</th>
-       <th>Web (URL)</th>
-       <th>Web (Mobile)</th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr *ngFor="let season of seasons; let i = index">
-       <td scope="row">{{i}}</td>
-       <td>{{season.season}}</td>
-       <td><a href="{{season.url}}">URL of Season {{season.season}}</a></td>
-       <td><a href="{{season.url | wikipediaMobileUrl}}">URL of Season {{season.season}}</a></td>
-     </tr>
-   </tbody>
- </table>
- </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Year</th>
+          <th>Web (URL)</th>
+          <th>Web (Mobile)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let season of seasons; let i = index">
+          <td scope="row">{{i}}</td>
+          <td>{{season.season}}</td>
+          <td><a href="{{season.url}}">URL of Season {{season.season}}</a></td>
+          <td><a href="{{season.url | wikipediaMobileUrl}}">URL of Season {{season.season}}</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <navigation-menus></navigation-menus>
+  </div>
 </div>
