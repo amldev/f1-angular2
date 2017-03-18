@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from "./../../shared.service";
 
 @Component({
   selector: 'app-circuits',
@@ -7,9 +8,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CircuitsComponent implements OnInit {
 
-  constructor() { }
+  isLoading: boolean = true;
+  circuits: any;
+  driversNationalityFlags : any = [];
+  constructor(private _sharedService: SharedService) {}
 
   ngOnInit() {
+
+    this.selectYearCircuits();
+  }
+
+  selectYearCircuits() {
+    this.setIsLoadingProgress();
+    this._sharedService.findSelectYearCircuits(2017)
+      .subscribe(
+      lstresult => {
+
+        this.circuits = lstresult["MRData"]["CircuitTable"]["Circuits"];
+        this.isLoadingFinish();
+      },
+      error => {
+        console.log("Error. The findWeather result JSON value is as follows:");
+        console.log(error);
+        this.isLoadingFinish();
+      }
+    );
+  }
+
+  setIsLoadingProgress()
+  {
+    this.isLoading = true;
+  }
+
+  isLoadingFinish()
+  {
+    this.isLoading = false;
   }
 
 }
