@@ -1,4 +1,4 @@
-import { WikipediaMobileUrlPipe } from './../../pipes/app.pipe';
+import { WikipediaMobileUrlPipe } from './../../pipes/wikipediaurlmobile.pipe';
 
 export class Driver
 {
@@ -13,7 +13,7 @@ export class Driver
 
     //constructor(){ }
 
-    constructor(id: string, name: string, dateOfBirth: string, 
+    constructor(id: string, name: string, dateOfBirth: string,
                     permanentNumber: number, nationality: string, url: string)
     {
         this.id = id;
@@ -25,7 +25,7 @@ export class Driver
 
          //Transform wikipedia normal url to mobile url
         this.urlMobile = new WikipediaMobileUrlPipe().transform(this.url);
-        
+
         //Load select pilot profile photo to use in details
         this.profilePhoto = "./assets/img/drivers/" + this.id + ".png";
     }
