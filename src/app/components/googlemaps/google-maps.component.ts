@@ -25,7 +25,11 @@ export class GoogleMapsComponent implements OnInit{
     }
     else
     {
-      this.markers.push(new MarkerItem("jajajja", this.lat, this.lng, "Test"));
+      for (let i = 0; i <this.circuits.length; i++)
+      {
+        this.markers.push(new MarkerItem(this.circuits[i].circuitName, +this.circuits[i].Location.lat, +this.circuits[i].Location.long, this.circuits[i].Location.locality));
+      }
+
       console.log(this.markers.length);
     }
   }
