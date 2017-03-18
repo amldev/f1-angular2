@@ -1,4 +1,4 @@
-export class MarkerItem implements marker {
+export class Marker implements MarkerIF {
   name: string;
   lat:number;
   lng:number;
@@ -12,7 +12,7 @@ export class MarkerItem implements marker {
   }
 }
 
-export interface marker{
+export interface MarkerIF{
     name:string;
     lat:number;
     lng:number;
