@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { marker } from './marker';
+import { MarkerItem } from './marker';
 
 @Component({
   selector: 'google-maps',
@@ -9,7 +9,7 @@ import { marker } from './marker';
 
 
 export class GoogleMapsComponent implements OnInit{
-  markers: marker[];
+  markers: any = [];
   lat: number = 23.022505;
   lng: number = 72.571362;
   @Input('circuitsData') circuits:any;
@@ -20,11 +20,13 @@ export class GoogleMapsComponent implements OnInit{
 
     if (this.circuits.length == 0)
     {
-      //this.markers.push({name: "jajajja", lat: this.lat, lng: this.lng, locality: "Test"});
+      this.markers.push(new MarkerItem("jajajja", this.lat, this.lng, "Test"));
+      console.log(this.markers.length);
     }
     else
     {
-      //this.markers.push({name: "jajajja", lat: this.lat, lng: this.lng, locality: "Test"});
+      this.markers.push(new MarkerItem("jajajja", this.lat, this.lng, "Test"));
+      console.log(this.markers.length);
     }
   }
 
