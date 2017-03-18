@@ -33,7 +33,7 @@ export class SharedService {
 
     findSelectYearCircuits(year)
     {
-      return this.getRequest(this.urlLocalhost + year + ".json");
+      return this.getRequest(this.urlLocalhost + year + "/circuits.json");
     }
 
     //http://ergast.com/api/f1/circuits.json?limit=100
