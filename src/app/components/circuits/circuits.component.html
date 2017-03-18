@@ -1,3 +1,40 @@
-<p>
-  circuits works!
-</p>
+<app-menu [title]="'Formula 1- 2016 drivers List'"></app-menu>
+<div class="col-md-8 col-md-offset-2" *ngIf="isLoading">
+  <i class="fa fa-spinner fa-spin fa-3x loading"></i>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-sm-3 col-xs-12" *ngIf="!isLoading">
+        <div class="form-group">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Locality</th>
+                <th>Date of Birth</th>
+                <th>Nationality</th>
+                <th>Nationality</th>
+                <th>+ Info</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let circuit of circuits; let i = index">
+                <td scope="row">{{circuit.circuitName}}</td>
+                <td>
+                  <a href="https://www.google.com/maps/@{{circuit.Location.lat}},{{circuit.Location.long}},13z" target="_blank">
+                      {{circuit.Location.locality}} {{circuit.Location.country}}
+                    </a>
+                </td>
+                <td>
+                    <a href="{{circuit.url}}" title="Web browser version"><img src="./assets/img/internet.png"/></a>
+                    <a href="{{circuit.url | wikipediaMobileUrl}}" title="Mobile version"><img src="./assets/img/mobile.png"/></a>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+
+    </div>
+    <navigation-menus></navigation-menus>
+</div>
+</div>
