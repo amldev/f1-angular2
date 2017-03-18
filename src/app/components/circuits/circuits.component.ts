@@ -10,17 +10,16 @@ export class CircuitsComponent implements OnInit {
 
   isLoading: boolean = true;
   circuits: any;
-  driversNationalityFlags : any = [];
   constructor(private _sharedService: SharedService) {}
 
   ngOnInit() {
 
-    this.selectYearCircuits();
+    this.selectYearCircuits(new Date().getFullYear());
   }
 
-  selectYearCircuits() {
+  selectYearCircuits(year) {
     this.setIsLoadingProgress();
-    this._sharedService.findSelectYearCircuits(2017)
+    this._sharedService.findSelectYearCircuits(year)
       .subscribe(
       lstresult => {
 
