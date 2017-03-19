@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from "./../../shared.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-circuits',
@@ -10,10 +11,17 @@ export class CircuitsComponent implements OnInit {
 
   isLoading: boolean = true;
   circuits: any;
-  constructor(private _sharedService: SharedService) {}
+  sub: any;
+  constructor(private _sharedService: SharedService, private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+       console.log("Receive param: " + params['id']); // (+) converts string 'id' to a number
+       console.log("Receive param: " + params['year']); // (+) converts string 'id' to a number
+      //console.log(this.model.name +  "   " + this.model.dateOfBirth + " " + this.model.url);
+       // In a real app: dispatch action to load the details here.
 
+    });
     this.selectYearCircuits(new Date().getFullYear());
   }
 
