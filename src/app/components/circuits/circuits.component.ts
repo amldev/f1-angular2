@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { SharedService } from "./../../shared.service";
 import { ActivatedRoute } from "@angular/router";
 
@@ -8,6 +8,10 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./circuits.component.css']
 })
 export class CircuitsComponent implements OnInit {
+  @Input('title') title:string;
+
+  year: number;
+  id: string;
 
   isLoading: boolean = true;
   circuits: any;
@@ -16,13 +20,24 @@ export class CircuitsComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-       console.log("Receive param: " + params['id']); // (+) converts string 'id' to a number
-       console.log("Receive param: " + params['year']); // (+) converts string 'id' to a number
+      this.id = params['id'];
+      this.year = params['year'];
+       console.log("Receive param: " + this.id); // (+) converts string 'id' to a number
+       console.log("Receive param: " + this.year); // (+) converts string 'id' to a number
       //console.log(this.model.name +  "   " + this.model.dateOfBirth + " " + this.model.url);
        // In a real app: dispatch action to load the details here.
 
     });
-    this.selectYearCircuits(new Date().getFullYear());
+
+    if (this.year != undefined)
+    {
+      this.selectYearCircuits(this.year);
+    }
+    else
+    {
+      this.selectYearCircuits(new Date().getFullYear());
+    }
+
   }
 
   selectYearCircuits(year) {
