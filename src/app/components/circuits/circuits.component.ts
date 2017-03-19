@@ -8,7 +8,8 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./circuits.component.css']
 })
 export class CircuitsComponent implements OnInit {
-  @Input('title') title:string;
+
+  title: string;
 
   year: number;
   id: string;
@@ -31,10 +32,12 @@ export class CircuitsComponent implements OnInit {
 
     if (this.year != undefined)
     {
+      this.title = "F1 " + this.year + " circuits list";
       this.selectYearCircuits(this.year);
     }
     else
     {
+      this.title = "F1 current year circuits list";
       this.selectYearCircuits(new Date().getFullYear());
     }
 
