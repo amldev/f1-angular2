@@ -22,6 +22,7 @@ export class CircuitsComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
+      if (this.id == undefined) this.id = "-1";
       this.year = params['year'];
        console.log("Receive param: " + this.id); // (+) converts string 'id' to a number
        console.log("Receive param: " + this.year); // (+) converts string 'id' to a number
@@ -29,23 +30,48 @@ export class CircuitsComponent implements OnInit {
        // In a real app: dispatch action to load the details here.
 
     });
+    if (this.id == "-1")
+    {
+      if (this.year != undefined)
+      {
+        this.title = "F1 " + this.year + " circuits list";
+        this.selectYearCircuits(this.year);
+      }
+      else
+      {
+        this.title = "F1 current year circuits list";
+        this.selectYearCircuits(new Date().getFullYear());
+      }
+    }
+    else if (this.id == "all")
+    {
+      this.title = "F1 all history circuits list";
+      this.selectAllHistoryCircuits();
+    }
 
-    if (this.year != undefined)
-    {
-      this.title = "F1 " + this.year + " circuits list";
-      this.selectYearCircuits(this.year);
-    }
-    else
-    {
-      this.title = "F1 current year circuits list";
-      this.selectYearCircuits(new Date().getFullYear());
-    }
 
   }
 
   selectYearCircuits(year) {
     this.setIsLoadingProgress();
     this._sharedService.findSelectYearCircuits(year)
+      .subscribe(
+      lstresult => {
+
+        this.circuits = lstresult["MRData"]["CircuitTable"]["Circuits"];
+        this.isLoadingFinish();
+      },
+      error => {
+        console.log("Error. The findWeather result JSON value is as follows:");
+        console.log(error);
+        this.isLoadingFinish();
+      }
+    );
+  }
+
+  selectAllHistoryCircuits() {
+    this.setIsLoadingProgress();
+    this._sharedService.findAllCircuits()
       .subscribe(
       lstresult => {
 
