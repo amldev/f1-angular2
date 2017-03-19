@@ -13,6 +13,7 @@ const MAINMENU_ROUTES: Routes = [
     { path: 'drivers', component: DriversComponent },
     { path: 'driver/:id', component: DriverDetailsComponent },
     { path: 'circuits', component: CircuitsComponent },
+    { path: 'circuits/:id/:year', component: CircuitsComponent },
     { path: '**', component: PageNotFoundComponent } //Show when select route is not register
 ];
 
