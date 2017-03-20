@@ -41,16 +41,7 @@ export class DriversComponent implements OnInit {
     this._sharedService.findMinOneTimeWorldChampion()
       .subscribe(
       lstresult => {
-
-        this.drivers = lstresult["MRData"]["DriverTable"]["Drivers"];
-
-        //Save nationality flags with all url
-        for (var i = 0; i < this.drivers.length; i++)
-        {
-          this.driversNationalityFlags.push("./assets/img/flags/" + this.drivers[i].nationality + ".png");
-        }
-
-        this.isLoadingFinish();
+          this.addDataAboutDrivers(lstresult);
       },
       error => {
         console.log("Error. The findWeather result JSON value is as follows:");
@@ -65,15 +56,7 @@ export class DriversComponent implements OnInit {
       .subscribe(
       lstresult => {
 
-        this.drivers = lstresult["MRData"]["DriverTable"]["Drivers"];
-
-        //Save nationality flags with all url
-        for (var i = 0; i < this.drivers.length; i++)
-        {
-          this.driversNationalityFlags.push("./assets/img/flags/" + this.drivers[i].nationality + ".png");
-        }
-
-        this.isLoadingFinish();
+        this.addDataAboutDrivers(lstresult);
       },
       error => {
         console.log("Error. The findWeather result JSON value is as follows:");
@@ -91,6 +74,19 @@ export class DriversComponent implements OnInit {
   isLoadingFinish()
   {
     this.isLoading = false;
+  }
+
+  addDataAboutDrivers(lstresult)
+  {
+    this.drivers = lstresult["MRData"]["DriverTable"]["Drivers"];
+
+    //Save nationality flags with all url
+    for (var i = 0; i < this.drivers.length; i++)
+    {
+      this.driversNationalityFlags.push("./assets/img/flags/" + this.drivers[i].nationality + ".png");
+    }
+
+    this.isLoadingFinish();
   }
 
 }
