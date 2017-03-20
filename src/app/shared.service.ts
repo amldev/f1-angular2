@@ -47,7 +47,7 @@ export class SharedService {
      */
     findMinOneTimeWorldChampion()
     {
-      return this.getRequest(this.urlLocalhost + " /driverStandings/1/drivers.json?limit=100");
+      return this.getRequest(this.urlLocalhost + "driverStandings/1/drivers.json?limit=100");
     }
    
     /**
