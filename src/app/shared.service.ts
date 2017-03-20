@@ -23,20 +23,38 @@ export class SharedService {
       return this.getRequest(this.urlLocalhost + year + "/drivers.json");
     }
 
-    //http://ergast.com/api/f1/drivers/alonso.json
+    /**
+     * /drivers/<driverId>.json
+     * @param driverId Show select driver info details
+     */
     findSelectDriverWithId(driverId)
     {
       return this.getRequest(this.urlLocalhost + "drivers/" + driverId + ".json");
     }
 
-    //circuitsUrl: "http://ergast.com/api/f1/2012.json";
+    /**
+     * /drivers.json?limit=50&offset=1
+     * @param limit Items per page (max 100)
+     * @param page show page number
+     */
+    findAddlDriversByPageAndResultsPerPage(limit, page)
+    {
 
+    }
+   
+    /**
+     * /2012/circuits.json
+     * @param year Number to filt select year circuits
+     */
     findSelectYearCircuits(year)
     {
       return this.getRequest(this.urlLocalhost + year + "/circuits.json");
     }
 
-    //http://ergast.com/api/f1/circuits.json?limit=100
+    /**
+     * /circuits.json?limit=100
+     * Show all circuits
+     */
     findAllCircuits()
     {
       return this.getRequest(this.urlLocalhost + "circuits.json?limit=100");
