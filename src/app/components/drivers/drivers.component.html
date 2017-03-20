@@ -1,4 +1,4 @@
-<app-menu [title]="'Formula 1- 2016 drivers List'"></app-menu>
+<app-menu [title]="title"></app-menu>
 <div class="col-md-8 col-md-offset-2" *ngIf="isLoading">
   <i class="fa fa-spinner fa-spin fa-3x loading"></i>
 </div>
@@ -25,10 +25,9 @@
                   </a>
               </td>
               <td>{{driver.dateOfBirth}}</td>
-              <td><img src="{{driversNationalityFlags[i]}}" /></td>
-              <!--<img class="media-object dp img-circle"
-                          [src]="profilePhoto"
-                          default="./assets/img/flags/Unknown.png">-->
+              <td>
+              <img [src]="driversNationalityFlags[i]"
+                          default="./assets/img/flags/Unknown.png"></td>
               <td>
                   <a href="{{driver.url}}" title="Web browser version"><img src="./assets/img/internet.png"/></a>
                   <a href="{{driver.url | wikipediaMobileUrl}}}}" title="Mobile version"><img src="./assets/img/mobile.png"/></a>
