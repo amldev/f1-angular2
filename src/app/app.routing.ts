@@ -11,6 +11,7 @@ const MAINMENU_ROUTES: Routes = [
     { path: '', redirectTo: '/seasons', pathMatch: 'full' },
     { path: 'seasons', component: SeasonsComponent },
     { path: 'drivers', component: DriversComponent },
+    { path: 'drivers/:filter', component: DriversComponent },
     { path: 'driver/:id', component: DriverDetailsComponent },
     { path: 'circuits', component: CircuitsComponent },
     { path: 'circuits/:id/:year', component: CircuitsComponent },
