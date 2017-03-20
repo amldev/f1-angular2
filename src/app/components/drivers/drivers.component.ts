@@ -18,6 +18,7 @@ export class DriversComponent implements OnInit {
 //
   ngOnInit() {
 
+    //Parameter manage
     this.sub = this.route.params.subscribe(params => {
       this.filter = params['filter'];
       if (this.filter == undefined) this.filter = "-1";
@@ -25,11 +26,12 @@ export class DriversComponent implements OnInit {
 
     if (this.filter == "champs")
     {
-      this.title = "F1 world champ dirvers list";
+      this.title = "F1 world champ drivers list";
       this.getWorldChampsDrivers();
     }
     else
     {
+      this.title = "F1 Last Year Champ drivers list";
       this.getLastYearDrivers();
     }
     
