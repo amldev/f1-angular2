@@ -57,9 +57,7 @@ export class CircuitsComponent implements OnInit {
     this._sharedService.findSelectYearCircuits(year)
       .subscribe(
       lstresult => {
-
-        this.circuits = lstresult["MRData"]["CircuitTable"]["Circuits"];
-        this.isLoadingFinish();
+        this.asignCircuitData(lstresult);
       },
       error => {
         console.log("Error. The findWeather result JSON value is as follows:");
@@ -74,9 +72,7 @@ export class CircuitsComponent implements OnInit {
     this._sharedService.findAllCircuits()
       .subscribe(
       lstresult => {
-
-        this.circuits = lstresult["MRData"]["CircuitTable"]["Circuits"];
-        this.isLoadingFinish();
+        this.asignCircuitData(lstresult);
       },
       error => {
         console.log("Error. The findWeather result JSON value is as follows:");
@@ -94,6 +90,13 @@ export class CircuitsComponent implements OnInit {
   isLoadingFinish()
   {
     this.isLoading = false;
+  }
+
+  //Refactorize circuit data after receive from server
+  asignCircuitData(lstresult)
+  {
+      this.circuits = lstresult["MRData"]["CircuitTable"]["Circuits"];
+      this.isLoadingFinish();
   }
 
 }
