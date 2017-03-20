@@ -20,14 +20,17 @@ export class GoogleMapsComponent implements OnInit{
 
     if (this.circuits.length == 0)
     {
-      this.markers.push(new Marker("jajajja", this.lat, this.lng, "Test"));
+      this.markers.push(new Marker("Current Location", this.lat, this.lng, "Location not defined"));
       console.log(this.markers.length);
     }
     else
     {
       for (let i = 0; i <this.circuits.length; i++)
       {
-        this.markers.push(new Marker(this.circuits[i].circuitName, +this.circuits[i].Location.lat, +this.circuits[i].Location.long, this.circuits[i].Location.locality));
+        this.markers.push(new Marker(this.circuits[i].circuitName, 
+                                    +this.circuits[i].Location.lat, 
+                                    +this.circuits[i].Location.long, 
+                                    this.circuits[i].Location.locality));
       }
 
       console.log(this.markers.length);
