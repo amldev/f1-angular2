@@ -6,15 +6,22 @@ import { CircuitsComponent } from './circuits.component';
 
 import { PipesModule } from '../../pipes';
 import { MenuModule} from './../menus/menu.module';
+//Google Maps
+import { AgmCoreModule } from 'angular2-google-maps/core';
+import { GoogleMapsComponent } from './../google-maps/google-maps.component';
+
 
 @NgModule({
   imports: [
     MenuModule,
     PipesModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAf4bgSRANnFPFF8vooBFCItawQVqROcjY'
+    })
   ],
-  declarations: [CircuitsComponent],
+  declarations: [CircuitsComponent, GoogleMapsComponent],
   exports: [CircuitsComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
