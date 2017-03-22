@@ -11,7 +11,7 @@ import { ComponentsModule } from './components';
 import { SharedService } from "./shared.service";
 
 //Import Directives
-import { DefaultImage } from './directives/defaultimage.directive';
+import { DirectivesModule } from './directives';
 
 //routing
 import { ROUTING } from './app.routing';
@@ -22,14 +22,14 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DefaultImage,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     ROUTING,
-    ComponentsModule
+    ComponentsModule,
+    DirectivesModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
