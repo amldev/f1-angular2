@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 //Google Maps
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
+
 import { MenuComponent } from './menus/menu.component';
 import { DriversComponent } from './drivers/drivers.component';
 import { DriverDetailsComponent } from './drivers/driver.component';
@@ -15,6 +16,8 @@ import { PageNotFoundComponent } from './notfound/not-found.component';
 import { NavigationMenusComponent } from './navigation-menus/navigation-menus.component';
 import { GoogleMapsComponent } from './googlemaps/google-maps.component';
 import { PipesModule } from '../pipes';
+//Import Directives
+import { DirectivesModule } from '../directives';
 
 
 export const COMPONENTS = [
@@ -36,6 +39,7 @@ export const COMPONENTS = [
     ReactiveFormsModule,
     RouterModule,
     PipesModule,
+    DirectivesModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAf4bgSRANnFPFF8vooBFCItawQVqROcjY'
     })
