@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { SearchPipe } from './search.pipe';
-import { WikipediaMobileUrlPipe } from './wikipediaurlmobile.pipe';
+import { WikipediaMobileUrlPipe } from './wikipedia-url-mobile.pipe';
 
 
 export const PIPES = [
