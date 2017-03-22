@@ -18,4 +18,4 @@ const MAINMENU_ROUTES: Routes = [
     { path: '**', component: PageNotFoundComponent } //Show when select route is not register
 ];
 
-export const ROUTING: ModuleWithProviders = RouterModule.forRoot(MAINMENU_ROUTES);
+export const RoutingModule: ModuleWithProviders = RouterModule.forRoot(MAINMENU_ROUTES);
