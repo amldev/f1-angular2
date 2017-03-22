@@ -12,9 +12,9 @@ import { DriversComponent } from './drivers/drivers.component';
 import { DriverDetailsComponent } from './drivers/driver.component';
 import { SeasonsComponent } from './seasons/seasons.component';
 import { CircuitsComponent } from './circuits/circuits.component';
-import { PageNotFoundComponent } from './notfound/not-found.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavigationMenusComponent } from './navigation-menus/navigation-menus.component';
-import { GoogleMapsComponent } from './googlemaps/google-maps.component';
+import { GoogleMapsComponent } from './google-maps/google-maps.component';
 import { PipesModule } from '../pipes';
 //Import Directives
 import { DirectivesModule } from '../directives';
