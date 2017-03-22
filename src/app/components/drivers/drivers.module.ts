@@ -5,9 +5,11 @@ import { RouterModule } from '@angular/router';
 import { DriversComponent } from './drivers.component';
 
 import { PipesModule } from '../../pipes';
+import { MenuModule} from './../menus/menu.module';
 
 @NgModule({
   imports: [
+    MenuModule,
     PipesModule,
     CommonModule,
     RouterModule
