@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Marker } from './marker';
 
+
 @Component({
   selector: 'google-maps',
   templateUrl: './google-maps.component.html',
