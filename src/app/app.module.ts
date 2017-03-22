@@ -1,7 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule  } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { CoreModule } from './core.module'
 
 /**
  * Custom module with all my components
@@ -26,9 +24,7 @@ import { AppComponent } from './app.component';
     AppComponent,
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
+    CoreModule,
     ROUTING,
     ComponentsModule,
     DirectivesModule,
