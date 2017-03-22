@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { DefaultImage } from './defaultimage.directive';
+import { DefaultImage } from './default-image.directive';
 
 export const DIRECTIVES = [
   DefaultImage,
