@@ -4,7 +4,7 @@ import { DriversComponent } from './components/drivers/drivers.component';
 import { DriverDetailsComponent } from './components/drivers/driver.component';
 import { SeasonsComponent } from './components/seasons/seasons.component';
 import { CircuitsComponent } from './components/circuits/circuits.component';
-import { PageNotFoundComponent } from './components/notfound/not-found.component'
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
 
 const MAINMENU_ROUTES: Routes = [
     //full : makes sure the path is absolute path
