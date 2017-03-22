@@ -7,10 +7,10 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 
 //Import our custom modules
 import { SeasonsModule } from './seasons/seasons.module'
+import { DriversModule } from './drivers/drivers.module'
 
 
 import { MenuComponent } from './menus/menu.component';
-import { DriversComponent } from './drivers/drivers.component';
 import { DriverDetailsComponent } from './drivers/driver.component';
 import { SeasonsComponent } from './seasons/seasons.component';
 import { CircuitsComponent } from './circuits/circuits.component';
@@ -25,7 +25,6 @@ import { DirectivesModule } from '../directives';
 export const COMPONENTS = [
   MenuComponent,
   DriverDetailsComponent,
-  DriversComponent,
   CircuitsComponent,
   PageNotFoundComponent,
   NavigationMenusComponent,
@@ -39,6 +38,7 @@ export const COMPONENTS = [
     CommonModule,
     RouterModule,
     SeasonsModule,
+    DriversModule,
     DirectivesModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAf4bgSRANnFPFF8vooBFCItawQVqROcjY'
