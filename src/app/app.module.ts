@@ -13,6 +13,8 @@ import { SharedService } from "./shared.service";
 //Import Directives
 import { DirectivesModule } from './directives';
 
+import { PipesModule } from './pipes';
+
 //routing
 import { ROUTING } from './app.routing';
 
@@ -29,7 +31,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     ROUTING,
     ComponentsModule,
-    DirectivesModule
+    DirectivesModule,
+    PipesModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
