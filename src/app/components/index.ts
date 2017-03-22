@@ -1,10 +1,12 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 //Google Maps
 import { AgmCoreModule } from 'angular2-google-maps/core';
+
+//Import our custom modules
+import { SeasonsModule } from './seasons/seasons.module'
 
 
 import { MenuComponent } from './menus/menu.component';
@@ -26,19 +28,17 @@ export const COMPONENTS = [
   DriversComponent,
   CircuitsComponent,
   PageNotFoundComponent,
-  SeasonsComponent,
   NavigationMenusComponent,
   GoogleMapsComponent,
-  
 ];
 
 
 @NgModule({
   imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    RouterModule,
     PipesModule,
+    CommonModule,
+    RouterModule,
+    SeasonsModule,
     DirectivesModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAf4bgSRANnFPFF8vooBFCItawQVqROcjY'
