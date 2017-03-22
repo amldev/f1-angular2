@@ -16,9 +16,6 @@ import { NavigationMenusComponent } from './navigation-menus/navigation-menus.co
 
 //Pipes
 import { PipesModule } from '../pipes';
-//Import Directives
-import { DirectivesModule } from '../directives';
-
 
 export const COMPONENTS = [
   DriverDetailsComponent,
@@ -36,8 +33,7 @@ export const COMPONENTS = [
     SeasonsModule,
     DriversModule,
     CircuitsModule,
-    MenuModule,
-    DirectivesModule
+    MenuModule
   ],
   declarations: COMPONENTS,
   exports: COMPONENTS,
