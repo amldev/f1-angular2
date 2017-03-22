@@ -16,6 +16,8 @@ export class CircuitsComponent implements OnInit {
 
   isLoading: boolean = true;
   circuits: any;
+  circuitImages : any = [];
+
   sub: any;
   constructor(private _sharedService: SharedService, private route: ActivatedRoute) {}
 
@@ -96,6 +98,11 @@ export class CircuitsComponent implements OnInit {
   asignCircuitData(lstresult)
   {
       this.circuits = lstresult["MRData"]["CircuitTable"]["Circuits"];
+
+      for(let i = 0; i < this.circuits.length; i++)
+      {
+         this.circuitImages.push("./assets/img/circuits/" + this.circuits[i].circuitId + ".png");
+      }
       this.isLoadingFinish();
   }
 

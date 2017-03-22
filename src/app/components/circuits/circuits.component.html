@@ -14,6 +14,7 @@
                 <th>Name</th>
                 <th>Locality</th>
                 <th>+ Info</th>
+                <th>Photo</th>
               </tr>
             </thead>
             <tbody>
@@ -28,6 +29,10 @@
                     <a href="{{circuit.url}}" title="Web browser version" target="_blank"><img src="./assets/img/internet.png"/></a>
                     <a href="{{circuit.url | wikipediaMobileUrl}}" title="Mobile version" target="_blank"><img src="./assets/img/mobile.png"/></a>
                   </td>
+                <td>
+                    <img [src]="circuitImages[i]"
+                          default="./assets/img/circuits/nocircuit.png">
+                </td>
               </tr>
             </tbody>
         </table>
