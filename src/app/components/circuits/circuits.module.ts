@@ -10,6 +10,9 @@ import { MenuModule} from './../menus/menu.module';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { GoogleMapsComponent } from './../google-maps/google-maps.component';
 
+//Import Directives
+import { DirectivesModule } from '../../directives';
+
 
 @NgModule({
   imports: [
@@ -19,7 +22,8 @@ import { GoogleMapsComponent } from './../google-maps/google-maps.component';
     RouterModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAf4bgSRANnFPFF8vooBFCItawQVqROcjY'
-    })
+    }),
+    DirectivesModule
   ],
   declarations: [CircuitsComponent, GoogleMapsComponent],
   exports: [CircuitsComponent],
