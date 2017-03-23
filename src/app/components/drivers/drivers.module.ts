@@ -7,6 +7,7 @@ import { DriversComponent } from './drivers.component';
 import { PipesModule } from '../../pipes';
 import { MenuModule} from './../menus/menu.module';
 import { NavigationMenusModule } from './../navigation-menus/navigation-menus.module';
+import { DirectivesModule } from '../../directives';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { NavigationMenusModule } from './../navigation-menus/navigation-menus.mo
     PipesModule,
     CommonModule,
     RouterModule,
-    NavigationMenusModule
+    NavigationMenusModule,
+    DirectivesModule
   ],
   declarations: [DriversComponent],
   exports: [DriversComponent],
