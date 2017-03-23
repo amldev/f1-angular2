@@ -7,12 +7,12 @@ import { CircuitsModule } from './circuits/circuits.module';
 import { SeasonsModule } from './seasons/seasons.module';
 import { DriversModule } from './drivers/drivers.module';
 import { MenuModule } from './menus/menu.module';
+import { NavigationMenusModule }from './navigation-menus/navigation-menus.module';
 
 //Import custom components
 //import { MenuComponent } from './menus/menu.component';
 import { DriverDetailsComponent } from './drivers/driver.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { NavigationMenusComponent } from './navigation-menus/navigation-menus.component';
 
 //Pipes
 import { PipesModule } from '../pipes';
@@ -20,7 +20,6 @@ import { PipesModule } from '../pipes';
 export const COMPONENTS = [
   DriverDetailsComponent,
   PageNotFoundComponent,
-  NavigationMenusComponent,
   
 ];
 
@@ -33,7 +32,8 @@ export const COMPONENTS = [
     SeasonsModule,
     DriversModule,
     CircuitsModule,
-    MenuModule
+    MenuModule,
+    NavigationMenusModule
   ],
   declarations: COMPONENTS,
   exports: COMPONENTS,
