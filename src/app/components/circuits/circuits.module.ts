@@ -6,6 +6,8 @@ import { CircuitsComponent } from './circuits.component';
 
 import { PipesModule } from '../../pipes';
 import { MenuModule} from './../menus/menu.module';
+import { NavigationMenusModule } from './../navigation-menus/navigation-menus.module';
+
 //Google Maps
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { GoogleMapsComponent } from './../google-maps/google-maps.component';
@@ -23,7 +25,8 @@ import { DirectivesModule } from '../../directives';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAf4bgSRANnFPFF8vooBFCItawQVqROcjY'
     }),
-    DirectivesModule
+    DirectivesModule,
+    NavigationMenusModule
   ],
   declarations: [CircuitsComponent, GoogleMapsComponent],
   exports: [CircuitsComponent],

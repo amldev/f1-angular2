@@ -1,4 +1,4 @@
-import { WikipediaMobileUrlPipe } from './../../pipes/wikipediaurlmobile.pipe';
+import { WikipediaMobileUrlPipe } from './../../pipes/wikipedia-url-mobile.pipe';
 
 export class Driver
 {
