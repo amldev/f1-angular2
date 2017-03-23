@@ -3,11 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 //Import our custom modules
-import { CircuitsModule } from './circuits/circuits.module';
-import { SeasonsModule } from './seasons/seasons.module';
-import { DriversModule } from './drivers/drivers.module';
-import { MenuModule } from './menus/menu.module';
-import { NavigationMenusModule }from './navigation-menus/navigation-menus.module';
+import { CustomComponentsModule } from './custom-components.module';
 
 //Import custom components
 
@@ -20,7 +16,6 @@ import { PipesModule } from '../pipes';
 export const COMPONENTS = [
   DriverDetailsComponent,
   PageNotFoundComponent,
-  
 ];
 
 
@@ -29,11 +24,7 @@ export const COMPONENTS = [
     PipesModule,
     CommonModule,
     RouterModule,
-    SeasonsModule,
-    DriversModule,
-    CircuitsModule,
-    MenuModule,
-    NavigationMenusModule
+    CustomComponentsModule
   ],
   declarations: COMPONENTS,
   exports: COMPONENTS,
