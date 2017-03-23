@@ -6,10 +6,11 @@ import { CoreModule } from './core.module'
  */
 import { ComponentsModule } from './components';
 
-//Import Directives
-import { DirectivesModule } from './directives';
 
-import { PipesModule } from './pipes';
+//Import Directives
+//import { DirectivesModule } from './directives';
+
+//import { PipesModule } from './pipes';
 
 //routing
 import { RoutingModule } from './app.routing';
@@ -25,8 +26,8 @@ import { AppComponent } from './components/app/app.component';
     CoreModule,
     RoutingModule,
     ComponentsModule,
-    DirectivesModule,
-    PipesModule
+    //DirectivesModule,
+   //PipesModule
   ],
   bootstrap: [AppComponent]
 })
