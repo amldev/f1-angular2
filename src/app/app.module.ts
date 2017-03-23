@@ -6,8 +6,6 @@ import { CoreModule } from './core.module'
  */
 import { ComponentsModule } from './components';
 
-import { SharedService } from "./shared.service";
-
 //Import Directives
 import { DirectivesModule } from './directives';
 
@@ -16,7 +14,7 @@ import { PipesModule } from './pipes';
 //routing
 import { RoutingModule } from './app.routing';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './components/app/app.component';
 
 
 @NgModule({
@@ -30,7 +28,6 @@ import { AppComponent } from './app.component';
     DirectivesModule,
     PipesModule
   ],
-  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
