@@ -10,7 +10,7 @@ import { MenuModule } from './menus/menu.module';
 import { NavigationMenusModule }from './navigation-menus/navigation-menus.module';
 
 //Import custom components
-//import { MenuComponent } from './menus/menu.component';
+
 import { DriverDetailsComponent } from './drivers/driver.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
