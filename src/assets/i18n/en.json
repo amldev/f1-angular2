@@ -1,0 +1,10 @@
+{
+	"TITLE": "F1",
+    "BASQUE": "Euskara",
+    "SPANISH": "Español",
+    "ENGLISH": "English",
+    //Menu
+    "SEASONS": "Seasons",
+    "DRIVERS": "Drivers",
+    "CIRCUITS": "Circuits"
+}
