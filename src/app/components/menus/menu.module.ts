@@ -6,11 +6,20 @@ import { MenuComponent } from './menu.component';
 
 import { PipesModule } from '../../pipes';
 
+import { TranslateModule, TranslateLoader  } from 'ng2-translate/ng2-translate';
+import { createTranslateLoader } from './../../services/translate-loader';
+import { Http } from '@angular/http';
+
 @NgModule({
   imports: [
     PipesModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    TranslateModule.forRoot({
+            provide: TranslateLoader,
+            useFactory: (createTranslateLoader),
+            deps: [Http]
+        })
   ],
   declarations: [MenuComponent],
   exports: [MenuComponent],
