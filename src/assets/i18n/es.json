@@ -3,8 +3,8 @@
     "BASQUE": "Euskara",
     "SPANISH": "Español",
     "ENGLISH": "English",
-    //Menu
     "SEASONS": "Temporadas",
     "DRIVERS": "Pilotos",
-    "CIRCUITS": "Circuitos"
+    "CIRCUITS": "Circuitos",
+    "WORLD_F1_CHAMPS_LIST": "Lista de campeones de F1"
 }
