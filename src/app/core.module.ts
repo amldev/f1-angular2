@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SharedService } from "./shared.service";
 
 import { TranslateModule, TranslateLoader  } from 'ng2-translate/ng2-translate';
-import { createTranslateLoader } from './../services/translate-loader';
+import { createTranslateLoader } from './services/translate-loader';
 
 @NgModule({
     imports: [
