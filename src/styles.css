@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+/*@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+/* You can add global styles to this file, and also import other style files */
 .icons
 {
     width: 24px;
@@ -9,3 +12,5 @@
 {
   margin-top: 15px;
 }
+
+
