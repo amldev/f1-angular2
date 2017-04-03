@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Directive } from '@angular/core';
-import { SharedService } from "./../../shared.service";
+import { SharedService } from "./../../services/shared.service";
 import { ActivatedRoute } from "@angular/router";
 import { Driver } from "./driver.model";
 import { WikipediaMobileUrlPipe } from './../../pipes/wikipedia-url-mobile.pipe';
