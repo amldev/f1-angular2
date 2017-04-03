@@ -8,6 +8,7 @@ import  { MaterialModule} from '@angular/material';
 
 import { TranslateModule, TranslateLoader  } from 'ng2-translate/ng2-translate';
 import { createTranslateLoader } from './services/translate-loader';
+import 'hammerjs';
 
 @NgModule({
     imports: [
