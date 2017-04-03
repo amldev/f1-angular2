@@ -1,4 +1,4 @@
-import { NgModule  } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { CoreModule } from './core.module'
 
 /**
@@ -29,6 +29,7 @@ import { AppComponent } from './components/app/app.component';
     //DirectivesModule,
    //PipesModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
