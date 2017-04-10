@@ -24,7 +24,7 @@ export class AppComponent {
     {
       this.router.navigate(['/seasons']); 
     }
-    if (event[1] == "68") //"D"
+    if (event[1] == "68" || event[1] == "32") //"D" or Space
     {
       this.router.navigate(['/drivers']);
     }
