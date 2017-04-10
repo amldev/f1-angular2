@@ -16,13 +16,17 @@ export class AppComponent {
     console.log("Receive event" +  event[0] + " / " + event[1]);
 
     //Define Angular application navigation and actions
-    if (event[1] == "39")
+    if (event[1] == "39") //Right arrow
     {
       this.router.navigate(['/circuits']); 
     }
-    if (event[1] == "37")
+    if (event[1] == "37") // Left arrow
     {
       this.router.navigate(['/seasons']); 
+    }
+    if (event[1] == "68") //"D"
+    {
+      this.router.navigate(['/drivers']);
     }
   }
   
