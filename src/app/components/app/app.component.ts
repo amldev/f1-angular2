@@ -16,9 +16,14 @@ export class AppComponent {
   keyChange(event) {
     console.log("Receive event" +  event[0] + " / " + event[1]);
 
+    //Define Angular application navigation and actions
     if (event[1] == "39")
     {
       this.router.navigate(['/circuits']); 
+    }
+    if (event[1] == "37")
+    {
+      this.router.navigate(['/seasons']); 
     }
   }
   
