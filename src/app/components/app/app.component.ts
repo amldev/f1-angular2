@@ -20,7 +20,7 @@ export class AppComponent {
     {
       this.router.navigate(['/circuits']); 
     }
-    if (event[1] == "37") // Left arrow
+    if (event[1] == "37" || event[1] == "83") // Left arrow
     {
       this.router.navigate(['/seasons']); 
     }
