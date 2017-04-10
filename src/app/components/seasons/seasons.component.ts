@@ -1,6 +1,5 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedService } from "./../../services/shared.service";
-window.focus(); // make sure we are on this page before we start typing
 @Component({
   selector: 'app-seasons',
   templateUrl: './seasons.component.html',
@@ -13,10 +12,6 @@ export class SeasonsComponent implements OnInit {
   title = "Seasons";
 
   constructor(private _sharedService: SharedService) {
-  }
-
-  keyChange($event){
-    console.log("Receive event" +  event[0] + " / " + event[1]);
   }
 
   ngOnInit() {
