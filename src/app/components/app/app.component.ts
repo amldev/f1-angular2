@@ -9,8 +9,7 @@ window.focus(); // make sure we are on this page before we start typing
 
 
 export class AppComponent {
-  lat: number = 23.022505;  
-  lng: number = 72.571362;  
+  
   constructor(public router: Router) {}
 
   keyChange(event) {
