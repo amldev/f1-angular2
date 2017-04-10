@@ -5,6 +5,8 @@ import { CoreModule } from './core.module'
  * Custom module with all my components
  */
 import { ComponentsModule } from './components';
+// Import your library
+import { KeyboardsEventsModule } from 'key-events-library';
 
 
 //Import Directives
@@ -26,6 +28,7 @@ import { AppComponent } from './components/app/app.component';
     CoreModule,
     RoutingModule,
     ComponentsModule,
+    KeyboardsEventsModule
     //DirectivesModule,
    //PipesModule
   ],

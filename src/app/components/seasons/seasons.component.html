@@ -1,3 +1,5 @@
+<keyboard-events [key]="''" [showLog]="true"
+        (selectKey)="keyChange($event)"></keyboard-events>
 <app-menu [title]="'Formula 1- Season List'"></app-menu>
 <div class="col-md-8 col-md-offset-2" *ngIf="isLoading">
   <i class="fa fa-spinner fa-spin fa-3x loading"></i>

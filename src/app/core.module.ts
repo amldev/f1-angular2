@@ -1,4 +1,4 @@
-import { NgModule  } from '@angular/core';
+import { NgModule   } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +20,7 @@ import 'hammerjs';
             useFactory: (createTranslateLoader),
             deps: [Http]
         }),
-        MaterialModule.forRoot(),
+        MaterialModule.forRoot()
     ],
      providers: [SharedService]
 })
