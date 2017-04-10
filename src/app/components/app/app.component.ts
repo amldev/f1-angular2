@@ -16,7 +16,7 @@ export class AppComponent {
     console.log("Receive event" +  event[0] + " / " + event[1]);
 
     //Define Angular application navigation and actions
-    if (event[1] == "39") //Right arrow
+    if (event[1] == "39" || event[1] == "67") //Right arrow
     {
       this.router.navigate(['/circuits']); 
     }
