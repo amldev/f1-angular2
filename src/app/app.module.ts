@@ -6,7 +6,7 @@ import { CoreModule } from './core.module'
  */
 import { ComponentsModule } from './components';
 // Import your library
-import { KeyboardsEventsModule } from 'angular-2x-4x-keyboard-events-library';
+import { KeyboardsEventsModule } from 'ng-2-4keyboard-events';
 
 
 //Import Directives
