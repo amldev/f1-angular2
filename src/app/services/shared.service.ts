@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from "@angular/http";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
-import { URL_LOCALHOST, DRIVERS_URLS } from './../constants/urls';
+import { URL_LOCALHOST, DRIVERS_URLS, SEASONS_URLS } from './../constants/urls';
 
 @Injectable()
 export class SharedService {
     urlLocalhost: string = URL_LOCALHOST;
 
-    allf1SeasonsURL: string = this.urlLocalhost + "seasons.json?limit=100";
+    allf1SeasonsURL: string = this.urlLocalhost + SEASONS_URLS.ALL_SEASONS_URL;
     driverSelectYearUrl: string = this.urlLocalhost;
     constructor(private _http: Http) { }
 
@@ -49,7 +49,7 @@ export class SharedService {
      */
     findMinOneTimeWorldChampion()
     {
-      return this.getRequest(this.urlLocalhost + DRIVERS_URLS[0].ONE_TIME_WORLD_CHAMPION_F1);
+      return this.getRequest(this.urlLocalhost + DRIVERS_URLS.ONE_TIME_WORLD_CHAMPION_F1);
     }
    
     /**
