@@ -8,12 +8,6 @@ import { ComponentsModule } from './components';
 // Import your library
 import { KeyboardsEventsModule } from 'ng-2-4keyboard-events';
 
-
-//Import Directives
-//import { DirectivesModule } from './directives';
-
-//import { PipesModule } from './pipes';
-
 //routing
 import { RoutingModule } from './app.routing';
 
@@ -29,8 +23,6 @@ import { AppComponent } from './components/app/app.component';
     RoutingModule,
     ComponentsModule,
     KeyboardsEventsModule
-    //DirectivesModule,
-   //PipesModule
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
