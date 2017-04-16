@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from "@angular/http";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
-import { URL_LOCALHOST } from './../constants/urls';
+import { URL_LOCALHOST, DRIVERS_URLS } from './../constants/urls';
 
 @Injectable()
 export class SharedService {
@@ -49,7 +49,7 @@ export class SharedService {
      */
     findMinOneTimeWorldChampion()
     {
-      return this.getRequest(this.urlLocalhost + "driverStandings/1/drivers.json?limit=100");
+      return this.getRequest(this.urlLocalhost + DRIVERS_URLS[0].ONE_TIME_WORLD_CHAMPION_F1);
     }
    
     /**
