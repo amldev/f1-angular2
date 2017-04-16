@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from "@angular/http";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
-import { URL_LOCALHOST, DRIVERS_URLS, SEASONS_URLS } from './../constants/urls';
+import { URL_LOCALHOST, DRIVERS_URLS, SEASONS_URLS, CIRCUITS_URLS } from './../constants/urls';
 
 @Injectable()
 export class SharedService {
