@@ -21,7 +21,7 @@ export class SharedService {
 
     findSelectYearDrivers(year)
     {
-      console.log(this.urlLocalhost + year + "/drivers.json");
+      console.log(this.urlLocalhost + year + DRIVERS_URLS.ALL_DRIVERS_SELECT);
       return this.getRequest(this.urlLocalhost + year + DRIVERS_URLS.ALL_DRIVERS_SELECT);
     }
 
