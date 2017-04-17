@@ -30,7 +30,7 @@
                     <a href="{{circuit.url | wikipediaMobileUrl}}" title="Mobile version" target="_blank"><img src="./assets/img/mobile.png"/></a>
                   </td>
                 <td>
-                  <image [type] = "'circuit'" [src]="circuitImages[i]"></image>
+                  <img [src]="circuitImages[i]" default="./assets/img/circuits/nocircuit.png"/>
                 </td>
               </tr>
             </tbody>
