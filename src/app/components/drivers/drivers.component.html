@@ -26,8 +26,9 @@
               </td>
               <td>{{driver.dateOfBirth}}</td>
               <td>
-              <img [src]="driversNationalityFlags[i]"
-                          default="./assets/img/flags/Unknown.png"></td>
+              <!--<img [src]="driversNationalityFlags[i]"
+                          default="./assets/img/flags/Unknown.png"></td>-->
+              <image [type] = "'driver-flag'" [src]="driversNationalityFlags[i]"></image>
               <td>
                   <a href="{{driver.url}}" title="Web browser version"><img src="./assets/img/internet.png"/></a>
                   <a href="{{driver.url | wikipediaMobileUrl}}" title="Mobile version"><img src="./assets/img/mobile.png"/></a>
