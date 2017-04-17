@@ -7,6 +7,7 @@ import { CircuitsComponent } from './circuits.component';
 import { PipesModule } from '../../pipes';
 import { MenuModule} from './../menus/menu.module';
 import { NavigationMenusModule } from './../navigation-menus/navigation-menus.module';
+import { ImageModule } from './../image/image.module';
 
 //Google Maps
 import { AgmCoreModule } from 'angular2-google-maps/core';
@@ -26,7 +27,8 @@ import { DirectivesModule } from '../../directives';
       apiKey: 'AIzaSyAf4bgSRANnFPFF8vooBFCItawQVqROcjY'
     }),
     DirectivesModule,
-    NavigationMenusModule
+    NavigationMenusModule,
+    ImageModule
   ],
   declarations: [CircuitsComponent, GoogleMapsComponent],
   exports: [CircuitsComponent],
