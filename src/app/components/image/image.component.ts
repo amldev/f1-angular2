@@ -6,7 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styles: ['./image.component.css']
 })
 export class ImageComponent implements OnInit {
-  @Input('title') title:string = "Formula 1 - Main";
+  @Input('type') type:string = "";
+  @Input('src') src:string;
+  default: string = "./assets/img/circuits/nocircuit.png";
 
   constructor () {
     
