@@ -1,5 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { SharedService } from "./../../services/shared.service";
+import { CircuitsService } from "./../../services/circuits.service";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -19,7 +19,7 @@ export class CircuitsComponent implements OnInit {
   circuitImages : any = [];
 
   sub: any;
-  constructor(private _sharedService: SharedService, private route: ActivatedRoute) {}
+  constructor(private _sharedService: CircuitsService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
