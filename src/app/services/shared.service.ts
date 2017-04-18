@@ -58,7 +58,7 @@ export class SharedService {
      */
     findSelectYearCircuits(year)
     {
-      return this.getRequest(this.urlLocalhost + year + "/circuits.json");
+      return this.getRequest(this.urlLocalhost + year + CIRCUITS_URLS.SELECT);
     }
 
     /**
