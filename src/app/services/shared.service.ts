@@ -67,7 +67,7 @@ export class SharedService {
      */
     findAllCircuits()
     {
-      return this.getRequest(this.urlLocalhost + "circuits.json?limit=100");
+      return this.getRequest(this.urlLocalhost + CIRCUITS_URLS.ALL_HISTORY);
     }
 
     //Function to make GET Requests
