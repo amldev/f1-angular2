@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from "@angular/http";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
+import { RequestService } from "./request.service";
 import { URL_LOCALHOST, DRIVERS_URLS, SEASONS_URLS, CIRCUITS_URLS } from './../constants/urls';
 
 @Injectable()
@@ -10,19 +11,19 @@ export class SharedService {
 
     allf1SeasonsURL: string = this.urlLocalhost + SEASONS_URLS.ALL_SEASONS_URL;
     driverSelectYearUrl: string = this.urlLocalhost;
-    constructor(private _http: Http) { }
+    constructor(private _http: Http, private _requestService: RequestService) { }
 
     //World championship drivers http://ergast.com/api/f1
     //Check select driver world champion: http://ergast.com/api/f1/driverStandings/1/drivers/<driverId>
     findF1SeasonsList() //GET
     {
-      return this.getRequest(this.allf1SeasonsURL);
+      return this._requestService.getRequest(this.allf1SeasonsURL);
     }
 
     findSelectYearDrivers(year)
     {
       console.log(this.urlLocalhost + year + DRIVERS_URLS.ALL_DRIVERS_SELECT);
-      return this.getRequest(this.urlLocalhost + year + DRIVERS_URLS.ALL_DRIVERS_SELECT);
+      return this._requestService.getRequest(this.urlLocalhost + year + DRIVERS_URLS.ALL_DRIVERS_SELECT);
     }
 
     /**
@@ -31,7 +32,7 @@ export class SharedService {
      */
     findSelectDriverWithId(driverId)
     {
-      return this.getRequest(this.urlLocalhost + DRIVERS_URLS.SELECT_DRIVER_BEFORE_ID + driverId + ".json");
+      return this._requestService.getRequest(this.urlLocalhost + DRIVERS_URLS.SELECT_DRIVER_BEFORE_ID + driverId + ".json");
     }
 
     /**
@@ -49,7 +50,7 @@ export class SharedService {
      */
     findMinOneTimeWorldChampion()
     {
-      return this.getRequest(this.urlLocalhost + DRIVERS_URLS.ONE_TIME_WORLD_CHAMPION_F1);
+      return this._requestService.getRequest(this.urlLocalhost + DRIVERS_URLS.ONE_TIME_WORLD_CHAMPION_F1);
     }
    
     /**
@@ -58,7 +59,7 @@ export class SharedService {
      */
     findSelectYearCircuits(year)
     {
-      return this.getRequest(this.urlLocalhost + year + CIRCUITS_URLS.SELECT);
+      return this._requestService.getRequest(this.urlLocalhost + year + CIRCUITS_URLS.SELECT);
     }
 
     /**
@@ -67,20 +68,7 @@ export class SharedService {
      */
     findAllCircuits()
     {
-      return this.getRequest(this.urlLocalhost + CIRCUITS_URLS.ALL_HISTORY);
+      return this._requestService.getRequest(this.urlLocalhost + CIRCUITS_URLS.ALL_HISTORY);
     }
-
-    //Function to make GET Requests
-    getRequest(url)
-    {
-      console.log(url);
-      return this._http.get(url)
-          .map(response => {
-              { return response.json() };
-          })
-          .catch(error => Observable.throw(error.json()));
-    }
-
-    //Function to make POST Requests
 
 }
