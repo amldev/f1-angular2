@@ -3,7 +3,7 @@ import { Http, Headers, Response } from "@angular/http";
 import 'rxjs/Rx';
 import { Observable } from "rxjs";
 import { RequestService } from "./request.service";
-import { URL_LOCALHOST, DRIVERS_URLS} from './../constants/urls';
+import { URL_LOCALHOST, CIRCUITS_URLS } from './../constants/urls';
 
 @Injectable()
 export class CircuitsService {
@@ -11,38 +11,23 @@ export class CircuitsService {
 
     driverSelectYearUrl: string = this.urlLocalhost;
     constructor(private _http: Http, private _requestService: RequestService) { }
-
-    findSelectYearDrivers(year)
+   
+    /**
+     * /2012/circuits.json
+     * @param year Number to filt select year circuits
+     */
+    findSelectYearCircuits(year)
     {
-      console.log(this.urlLocalhost + year + DRIVERS_URLS.ALL_DRIVERS_SELECT);
-      return this._requestService.getRequest(this.urlLocalhost + year + DRIVERS_URLS.ALL_DRIVERS_SELECT);
+      return this._requestService.getRequest(this.urlLocalhost + year + CIRCUITS_URLS.SELECT);
     }
 
     /**
-     * /drivers/<driverId>.json
-     * @param driverId Show select driver info details
+     * /circuits.json?limit=100
+     * Show all circuits
      */
-    findSelectDriverWithId(driverId)
+    findAllCircuits()
     {
-      return this._requestService.getRequest(this.urlLocalhost + DRIVERS_URLS.SELECT_DRIVER_BEFORE_ID + driverId + ".json");
-    }
-
-    /**
-     * /drivers.json?limit=50&offset=1
-     * @param limit Items per page (max 100)
-     * @param page show page number
-     */
-    findAddlDriversByPageAndResultsPerPage(limit, page)
-    {
-
-    }
-
-    /**
-     *  /driverStandings/1/drivers.json?limit=100
-     */
-    findMinOneTimeWorldChampion()
-    {
-      return this._requestService.getRequest(this.urlLocalhost + DRIVERS_URLS.ONE_TIME_WORLD_CHAMPION_F1);
+      return this._requestService.getRequest(this.urlLocalhost + CIRCUITS_URLS.ALL_HISTORY);
     }
 
 }
