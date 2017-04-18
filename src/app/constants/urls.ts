@@ -15,6 +15,7 @@ export const SEASONS_URLS =
 
 export const CIRCUITS_URLS =
 {
-
+    ALL_HISTORY : "circuits.json?limit=100",
+    
 };
 
