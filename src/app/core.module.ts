@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Http, HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedService } from "./services/shared.service";
+import { RequestService } from "./services/request.service";
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import  { MaterialModule} from '@angular/material';
 
@@ -22,7 +23,7 @@ import 'hammerjs';
         }),
         MaterialModule.forRoot()
     ],
-     providers: [SharedService]
+     providers: [SharedService, RequestService]
 })
 
 export class CoreModule {}
