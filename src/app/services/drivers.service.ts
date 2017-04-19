@@ -45,4 +45,13 @@ export class DriversService {
       return this._requestService.getRequest(this.urlLocalhost + DRIVERS_URLS.ONE_TIME_WORLD_CHAMPION_F1);
     }
 
+    /**
+     * current/last/results.json
+     */
+
+    getLastResultsOfLastGP()
+    {
+      return this._requestService.getRequest(this.urlLocalhost + DRIVERS_URLS.LAST_GRAND_PRIX_RESULTS);
+    }
+
 }
