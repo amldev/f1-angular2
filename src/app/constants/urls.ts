@@ -19,3 +19,10 @@ export const CIRCUITS_URLS =
     SELECT: "/circuits.json"
 };
 
+export const CONSTRUCTORS_URLS = 
+{
+    ALL_HISTORY : "constructors.json?limit=1000",
+    CURRENT_YEAR: "current/constructors.json",
+    SELECT_YEAR: "/constructors.json"
+}
+
