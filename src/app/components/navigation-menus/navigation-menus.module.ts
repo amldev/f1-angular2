@@ -6,6 +6,7 @@ import { NavigationMenusComponent } from './navigation-menus.component';
 
 import { PipesModule } from '../../pipes';
 import { MenuModule} from './../menus/menu.module';
+import { ResultsModule } from './../results/results.module';
 
 import { TranslateModule, TranslateLoader  } from 'ng2-translate/ng2-translate';
 import { createTranslateLoader } from './../../services/translate-loader';
@@ -21,7 +22,8 @@ import { Http } from '@angular/http';
             provide: TranslateLoader,
             useFactory: (createTranslateLoader),
             deps: [Http]
-        })
+        }),
+    ResultsModule
   ],
   declarations: [NavigationMenusComponent],
   exports: [NavigationMenusComponent],
