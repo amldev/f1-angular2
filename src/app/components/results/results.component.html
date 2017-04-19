@@ -1,9 +1,9 @@
 <div class="panel panel-default">
     <div class="panel-heading">Last race result</div>
     <div class="panel-body">
-        <ul>
-        
-        </ul>
+        <ol>
+            <li *ngFor="let driver of drivers; let i = index"> {{driver.number}}</li>
+        </ol>
 
     </div>
 </div>
