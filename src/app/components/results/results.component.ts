@@ -56,7 +56,8 @@ export class ResultsComponent implements OnInit {
         //Save nationality flags with all url
         for (var i = 0; i < this.drivers.length; i++)
         {
-            this.driversNationalityFlags.push("./assets/img/flags/" + this.drivers[i].nationality + ".png");
+            console.info(this.drivers[i].Driver.nationality);
+            this.driversNationalityFlags.push("./assets/img/flags/" + this.drivers[i].Driver.nationality + ".png");
         }
     }
 
