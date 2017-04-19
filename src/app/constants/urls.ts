@@ -26,3 +26,9 @@ export const CONSTRUCTORS_URLS =
     SELECT_YEAR: "/constructors.json"
 }
 
+export const STATUS_URLS =
+{
+    ALL_HISTORY: "status.json?limit=1000",
+    SELECT_YEAR: "/status.json"
+}
+
