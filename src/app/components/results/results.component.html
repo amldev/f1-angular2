@@ -2,7 +2,7 @@
     <div class="panel-heading">Last race result</div>
     <div class="panel-body">
         <ol>
-            <li *ngFor="let driver of drivers; let i = index"> {{driver.number}}</li>
+            <li *ngFor="let driver of drivers; let i = index"> {{driver.Driver.givenName}} {{driver.Driver.familyName}} - {{driver.points}}</li>
         </ol>
 
     </div>
