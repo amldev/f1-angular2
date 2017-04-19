@@ -9,6 +9,8 @@ import {DriversService} from './../../services/drivers.service';
 })
 export class ResultsComponent implements OnInit {
     @Input('type') type: String;
+    drivers: any;
+    driversNationalityFlags : any = [];
     constructor(private translate:TranslateService, private _sharedService: DriversService) {
         
         console.info("Select language: " + localStorage.getItem('selectLanguage'));
@@ -23,6 +25,17 @@ export class ResultsComponent implements OnInit {
 
     ngOnInit() {
         console.log(this.type);
+    }
+
+    addDataAboutDrivers(lstresult)
+    {
+        this.drivers = lstresult["MRData"]["DriverTable"]["Drivers"];
+
+        //Save nationality flags with all url
+        for (var i = 0; i < this.drivers.length; i++)
+        {
+        this.driversNationalityFlags.push("./assets/img/flags/" + this.drivers[i].nationality + ".png");
+        }
     }
 
 }
