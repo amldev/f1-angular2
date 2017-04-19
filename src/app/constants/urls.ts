@@ -5,11 +5,9 @@ export const DRIVERS_URLS =
 {
     ALL_DRIVERS_SELECT: "/drivers.json",
     SELECT_DRIVER_BEFORE_ID: "drivers/",
-    ONE_TIME_WORLD_CHAMPION_F1 : "driverStandings/1/drivers.json?limit=100",
+    ONE_TIME_WORLD_CHAMPION_F1: "driverStandings/1/drivers.json?limit=100",
     LAST_GRAND_PRIX_RESULTS: "current/last/results.json",
-    SELECT_DRIVER_ALL_RESULTS: "/results.json?limit=1000"
-
-    
+    SELECT_DRIVER_ALL_RESULTS: "/results.json?limit=1000" 
 };
 
 export const SEASONS_URLS = 
