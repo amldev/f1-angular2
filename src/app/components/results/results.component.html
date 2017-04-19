@@ -2,7 +2,10 @@
     <div class="panel-heading">Last race result</div>
     <div class="panel-body">
         <ol>
-            <li *ngFor="let driver of drivers; let i = index"> {{driver.Driver.givenName}} {{driver.Driver.familyName}} - {{driver.points}}</li>
+            <li *ngFor="let driver of drivers; let i = index"> 
+                <span *ngIf="driver.status == 'Finished' || driver.status == '+1 Lap'">{{driver.Driver.givenName}} {{driver.Driver.familyName}} - {{driver.points}}</span>
+                <span class="" *ngIf="driver.status != 'Finished' && driver.status != '+1 Lap'"><b>{{driver.Driver.givenName}} {{driver.Driver.familyName}} - {{driver.points}}</b></span>
+            </li>
         </ol>
 
     </div>
