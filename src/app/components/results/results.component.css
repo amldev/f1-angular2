@@ -4,11 +4,6 @@
     color: red;
 }
 
-:host(li) { 
-
-    text-decoration: none !important;
-}
-
 .list-group-item {
     border: none;
 }
