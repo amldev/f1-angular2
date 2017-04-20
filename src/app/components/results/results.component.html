@@ -14,7 +14,10 @@
                     <li *ngFor="let driver of drivers; let i = index">
                         <span *ngIf="driver.status == 'Finished' || driver.status == '+1 Lap'">
                             <div class="col-xs-12 col-sm-3">
-                                <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" />
+                                <img class="img-circle"
+                                        [src]="profilePhotos[i]" style="width: 50px;height:50px;" 
+                                        default="./assets/img/circuits/nocircuit.png">
+                                <!--<img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" />-->
                             </div>
                             <div class="col-xs-12 col-sm-9">
                                 <span class="name">{{driver.Driver.givenName}} {{driver.Driver.familyName}}</span><br/>
