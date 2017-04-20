@@ -12,6 +12,7 @@ export class ResultsComponent implements OnInit {
     lastRaceData: any;
     drivers:any;
     driversNationalityFlags : any = [];
+    profilePhotos :any = [];
     constructor(private translate:TranslateService, private _sharedService: DriversService) {
         
         console.info("Select language: " + localStorage.getItem('selectLanguage'));
@@ -58,6 +59,7 @@ export class ResultsComponent implements OnInit {
         {
             console.info(this.drivers[i].Driver.nationality);
             this.driversNationalityFlags.push("./assets/img/flags/" + this.drivers[i].Driver.nationality + ".png");
+            this.profilePhotos.push("./assets/img/drivers/" + this.drivers[i].Driver.driverId + ".png");
         }
     }
 
