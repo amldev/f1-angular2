@@ -8,11 +8,9 @@ import { DriversService } from "./services/drivers.service";
 import { CircuitsService } from "./services/circuits.service";
 import { ConstructorsService } from "./services/constructors.service";
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import  { MaterialModule} from '@angular/material';
 
 import { TranslateModule, TranslateLoader  } from 'ng2-translate/ng2-translate';
 import { createTranslateLoader } from './services/translate-loader';
-import 'hammerjs';
 
 @NgModule({
     imports: [
@@ -24,7 +22,6 @@ import 'hammerjs';
             useFactory: (createTranslateLoader),
             deps: [Http]
         }),
-        MaterialModule.forRoot()
     ],
      providers: [SharedService, RequestService, DriversService, CircuitsService, ConstructorsService]
 })
