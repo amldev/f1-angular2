@@ -8,9 +8,9 @@ import { PipesModule } from '../../pipes';
 import { MenuModule} from './../menus/menu.module';
 import { DirectivesModule } from '../../directives';
 
-import { TranslateModule, TranslateLoader  } from 'ng2-translate/ng2-translate';
+import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { createTranslateLoader } from './../../services/translate-loader';
-import { Http } from '@angular/http';
+import { Http, HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [
@@ -19,11 +19,13 @@ import { Http } from '@angular/http';
     CommonModule,
     RouterModule,
     TranslateModule.forRoot({
+        loader: {
             provide: TranslateLoader,
             useFactory: (createTranslateLoader),
             deps: [Http]
-        }),
-        DirectivesModule
+        }
+    }),
+    DirectivesModule
   ],
   declarations: [ResultsComponent],
   exports: [ResultsComponent],

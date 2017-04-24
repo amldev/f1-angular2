@@ -8,7 +8,7 @@ import { PipesModule } from '../../pipes';
 import { MenuModule} from './../menus/menu.module';
 import { ResultsModule } from './../results/results.module';
 
-import { TranslateModule, TranslateLoader  } from 'ng2-translate/ng2-translate';
+import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { createTranslateLoader } from './../../services/translate-loader';
 import { Http } from '@angular/http';
 
@@ -19,9 +19,11 @@ import { Http } from '@angular/http';
     CommonModule,
     RouterModule,
     TranslateModule.forRoot({
-            provide: TranslateLoader,
-            useFactory: (createTranslateLoader),
-            deps: [Http]
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [Http]
+            }
         }),
     ResultsModule
   ],

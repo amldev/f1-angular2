@@ -9,7 +9,7 @@ import { MenuModule} from './../menus/menu.module';
 import { NavigationMenusModule } from './../navigation-menus/navigation-menus.module';
 
 //Google Maps
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule } from '@agm/core';
 import { GoogleMapsComponent } from './../google-maps/google-maps.component';
 
 //Import Directives
