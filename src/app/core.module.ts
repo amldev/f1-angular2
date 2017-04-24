@@ -7,7 +7,7 @@ import { RequestService } from "./services/request.service";
 import { DriversService } from "./services/drivers.service";
 import { CircuitsService } from "./services/circuits.service";
 import { ConstructorsService } from "./services/constructors.service";
-//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TranslateModule, TranslateLoader  } from 'ng2-translate/ng2-translate';
 import { createTranslateLoader } from './services/translate-loader';
