@@ -9,7 +9,7 @@ import { CircuitsService } from "./services/circuits.service";
 import { ConstructorsService } from "./services/constructors.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { TranslateModule, TranslateLoader  } from 'ng2-translate/ng2-translate';
+import { TranslateModule, TranslateLoader, } from '@ngx-translate/core';
 import { createTranslateLoader } from './services/translate-loader';
 
 @NgModule({
@@ -18,9 +18,11 @@ import { createTranslateLoader } from './services/translate-loader';
         FormsModule,
         HttpModule,
         TranslateModule.forRoot({
-            provide: TranslateLoader,
-            useFactory: (createTranslateLoader),
-            deps: [Http]
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [Http]
+            }
         }),
     ],
      providers: [SharedService, RequestService, DriversService, CircuitsService, ConstructorsService]
