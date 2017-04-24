@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from "./../../services/shared.service";
+import { DriversService } from "./../../services/drivers.service";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -14,7 +14,7 @@ export class DriversComponent implements OnInit {
   sub: any;
   filter: string;
   title: string;
-  constructor(private _sharedService: SharedService, private route: ActivatedRoute) {}
+  constructor(private _sharedService: DriversService, private route: ActivatedRoute) {}
 //
   ngOnInit() {
 

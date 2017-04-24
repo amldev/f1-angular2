@@ -1,0 +1,13 @@
+.not-finish
+{
+    text-decoration:line-through;
+    color: red;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.poleman {
+    color: gold;
+}

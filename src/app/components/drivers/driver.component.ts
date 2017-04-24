@@ -58,6 +58,9 @@ export class DriverDetailsComponent implements OnInit {
         
         //Load select pilot profile photo to use in details
         this.profilePhoto = "./assets/img/drivers/" + this.driverId + ".png";
+        //this.profilePhoto = "./assets/img/circuits/nocircuit.png";
+
+        console.log("Check: " + this.profilePhoto);
         this.isLoadingFinish();
       },
       error => {

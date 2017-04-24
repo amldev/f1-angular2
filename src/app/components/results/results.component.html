@@ -1,0 +1,58 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Last race result</div>
+    <div class="panel-body">
+        <!--<ol>
+            <li *ngFor="let driver of drivers; let i = index"> 
+                <span *ngIf="driver.status == 'Finished' || driver.status == '+1 Lap'">{{driver.Driver.givenName}} {{driver.Driver.familyName}} - {{driver.points}}</span>
+                <span class="not-finish" *ngIf="driver.status != 'Finished' && driver.status != '+1 Lap'">{{driver.Driver.givenName}} {{driver.Driver.familyName}} - {{driver.points}}</span>
+                <img [src]="driversNationalityFlags[i]" default="./assets/img/flags/Unknown.png"/>
+                <p *ngIf="driver.status == 'Finished'">{{driver.Time.time}}</p>
+            </li>
+        </ol>-->
+
+        <ul class="list-group" id="contact-list">
+                    <li *ngFor="let driver of drivers; let i = index" class="list-group-item">
+                        <span *ngIf="driver.status == 'Finished' || driver.status == '+1 Lap'">
+                            <div class="col-xs-12 col-sm-3">
+                                <img class="img-circle"
+                                        [src]="profilePhotos[i]" style="width: 50px;height:50px;" 
+                                        default="./assets/img/circuits/nocircuit.png">
+                                <!--<img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" />-->
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <span class="name" [ngClass]="{'poleman': driver.grid =='1'}">{{driver.Driver.givenName}} {{driver.Driver.familyName}}</span><br/>
+                                <span data-toggle="tooltip" title="{{driver.Driver.nationality}}">
+                                    <img [src]="driversNationalityFlags[i]" default="./assets/img/flags/Unknown.png"/>
+                                </span>
+                                <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(870) 288-4149"></span>
+                                <span class="visible-xs"> <span class="text-muted">(870) 288-4149</span><br/></span>
+                                <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="scott.stevens@example.com"></span>
+                                <span class="visible-xs"> <span class="text-muted">scott.stevens@example.com</span><br/></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </span>
+
+                         <span *ngIf="driver.status != 'Finished' && driver.status != '+1 Lap'">
+                            <div class="col-xs-12 col-sm-3">
+                                <img class="img-circle"
+                                        [src]="profilePhotos[i]" style="width: 50px;height:50px;" 
+                                        default="./assets/img/circuits/nocircuit.png">
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <span class="name not-finish" [ngClass]="{'poleman': driver.grid =='1'}">{{driver.Driver.givenName}} {{driver.Driver.familyName}}</span><br/>
+                                <span data-toggle="tooltip" title="{{driver.Driver.nationality}}">
+                                    <img [src]="driversNationalityFlags[i]" default="./assets/img/flags/Unknown.png"/>
+                                </span>                                
+                                <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(870) 288-4149"></span>
+                                <span class="visible-xs"> <span class="text-muted">(870) 288-4149</span><br/></span>
+                                <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="scott.stevens@example.com"></span>
+                                <span class="visible-xs"> <span class="text-muted">scott.stevens@example.com</span><br/></span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </span>
+                       
+                    </li>
+                </ul>
+
+    </div>
+</div>
