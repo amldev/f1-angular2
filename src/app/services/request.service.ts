@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from "@angular/http";
+import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/Rx';
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs/Observable';
 
 
 @Injectable()
 export class RequestService {
-    
+
     constructor(private _http: Http) { }
 
-    //Function to make GET Requests
+    // Function to make GET Requests
     getRequest(url)
     {
       console.log(url);
       return this._http.get(url)
           .map(response => {
-              { return response.json() };
+              { return response.json()};
           })
           .catch(error => Observable.throw(error.json()));
     }
 
-    //Function to make POST Requests
+    // Function to make POST Requests
 
 }

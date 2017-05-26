@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from "@angular/http";
+import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/Rx';
-import { Observable } from "rxjs";
-import { RequestService } from "./request.service";
+import { Observable } from 'rxjs/Observable';
+import { RequestService } from './request.service';
 import { URL_LOCALHOST, CIRCUITS_URLS } from './../constants/urls';
 
 @Injectable()
@@ -11,13 +11,12 @@ export class CircuitsService {
 
     driverSelectYearUrl: string = this.urlLocalhost;
     constructor(private _http: Http, private _requestService: RequestService) { }
-   
+
     /**
      * /2012/circuits.json
      * @param year Number to filt select year circuits
      */
-    findSelectYearCircuits(year)
-    {
+    findSelectYearCircuits(year) {
       return this._requestService.getRequest(this.urlLocalhost + year + CIRCUITS_URLS.SELECT);
     }
 

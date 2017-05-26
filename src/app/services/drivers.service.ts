@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from "@angular/http";
+import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/Rx';
-import { Observable } from "rxjs";
-import { RequestService } from "./request.service";
+import { Observable } from 'rxjs/Observable';;
+import { RequestService } from './request.service';
 import { URL_LOCALHOST, DRIVERS_URLS} from './../constants/urls';
 
 @Injectable()
