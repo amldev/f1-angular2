@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { CircuitsService } from "./../../services/circuits.service";
-import { ActivatedRoute } from "@angular/router";
+import { CircuitsService } from './../../services/circuits.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-circuits',
@@ -14,9 +14,9 @@ export class CircuitsComponent implements OnInit {
   year: number;
   id: string;
 
-  isLoading: boolean = true;
+  isLoading = true;
   circuits: any;
-  circuitImages : any = [];
+  circuitImages: any = [];
 
   sub: any;
   constructor(private _sharedService: CircuitsService, private route: ActivatedRoute) {}
@@ -24,7 +24,7 @@ export class CircuitsComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
-      if (this.id == undefined) this.id = "-1";
+      if (this.id === undefined) { this.id = '-1'; }
       this.year = params['year'];
        console.log("Receive param: " + this.id); // (+) converts string 'id' to a number
        console.log("Receive param: " + this.year); // (+) converts string 'id' to a number
@@ -32,22 +32,18 @@ export class CircuitsComponent implements OnInit {
        // In a real app: dispatch action to load the details here.
 
     });
-    if (this.id == "-1")
+    if (this.id === "-1")
     {
-      if (this.year != undefined)
+      if (this.year !== undefined)
       {
         this.title = "F1 " + this.year + " circuits list";
         this.selectYearCircuits(this.year);
-      }
-      else
-      {
-        this.title = "F1 current year circuits list";
+      } else {
+        this.title = 'F1 current year circuits list';
         this.selectYearCircuits(new Date().getFullYear());
       }
-    }
-    else if (this.id == "all")
-    {
-      this.title = "F1 all history circuits list";
+    } else if (this.id === 'all') {
+      this.title = 'F1 all history circuits list';
       this.selectAllHistoryCircuits();
     }
 
@@ -62,7 +58,7 @@ export class CircuitsComponent implements OnInit {
         this.asignCircuitData(lstresult);
       },
       error => {
-        console.log("Error. The findWeather result JSON value is as follows:");
+        console.log('Error. The findWeather result JSON value is as follows:');
         console.log(error);
         this.isLoadingFinish();
       }
@@ -77,7 +73,7 @@ export class CircuitsComponent implements OnInit {
         this.asignCircuitData(lstresult);
       },
       error => {
-        console.log("Error. The findWeather result JSON value is as follows:");
+        console.log('Error. The findWeather result JSON value is as follows:');
         console.log(error);
         this.isLoadingFinish();
       }
@@ -97,11 +93,11 @@ export class CircuitsComponent implements OnInit {
   //Refactorize circuit data after receive from server
   asignCircuitData(lstresult)
   {
-      this.circuits = lstresult["MRData"]["CircuitTable"]["Circuits"];
+      this.circuits = lstresult['MRData']['CircuitTable']['Circuits'];
 
       for(let i = 0; i < this.circuits.length; i++)
       {
-         this.circuitImages.push("./assets/img/circuits/" + this.circuits[i].circuitId + ".png");
+         this.circuitImages.push('./assets/img/circuits/' + this.circuits[i].circuitId + '.png');
       }
       this.isLoadingFinish();
   }
