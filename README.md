@@ -33,3 +33,8 @@ To get more help on the `angular-cli` use `ng help` or go check out the [Angular
 ## Material Reference info
 
 https://coursetro.com/posts/code/29/Working-with-Angular-2-Material
+
+
+## Update from Angular 2 to 4:
+
+https://stackoverflow.com/questions/44134728/why-do-i-get-this-error-cant-bind-to-latitude-since-it-isnt-a-known-propert
